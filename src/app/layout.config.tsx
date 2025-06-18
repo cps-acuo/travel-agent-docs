@@ -19,10 +19,23 @@ export const baseOptions: BaseLayoutProps = {
         >
           <circle cx={12} cy={12} r={12} fill="currentColor" />
         </svg>
-        My App
+        Travel Agent Docs
       </>
     ),
   },
   // see https://fumadocs.dev/docs/ui/navigation/links
-  links: [],
+  links: [
+    {
+      text: 'Travel Agent',
+      url: '/docs/travel-agent/introduction',
+    },
+    {
+      text: 'Travel Agent WP',
+      url: '/docs/travel-agent-wordpress/introduction',
+    },
+    {
+      text: 'TA BookingForm',
+      url: '/docs/ta-bookingform/introduction',
+    },
+  ],
 };

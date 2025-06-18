@@ -12,7 +12,7 @@ export default function HomePage() {
         >
           /docs
         </Link>{' '}
-        and see the documentation.
+        or click the links in the navbar to see the documentation.
       </p>
     </main>
   );
