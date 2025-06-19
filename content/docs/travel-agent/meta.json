@@ -1,0 +1,13 @@
+{
+  "title": "Travel Agent",
+  "pages": [
+    "introduction",
+    "setup",
+    "travel-packages",
+    "travelers",
+    "data-management",
+    "journal",
+    "claim-journal",
+    "reports"
+  ]
+}
