@@ -6,5 +6,6 @@
     "features",
     "customization",
     "troubleshooting"
-  ]
+  ],
+  "root": true
 }

@@ -6,5 +6,6 @@
     "usage",
     "integration",
     "faq"
-  ]
+  ],
+  "root": true
 }

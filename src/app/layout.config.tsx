@@ -25,17 +25,5 @@ export const baseOptions: BaseLayoutProps = {
   },
   // see https://fumadocs.dev/docs/ui/navigation/links
   links: [
-    {
-      text: 'Travel Agent',
-      url: '/docs/travel-agent/introduction',
-    },
-    {
-      text: 'Travel Agent WP',
-      url: '/docs/travel-agent-wordpress/introduction',
-    },
-    {
-      text: 'TA BookingForm',
-      url: '/docs/ta-bookingform/introduction',
-    },
   ],
 };
