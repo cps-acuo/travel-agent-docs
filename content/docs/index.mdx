@@ -1,13 +1,22 @@
 ---
-title: Hello World
+title: Welcome to Travel Agent Docs
 description: Your first document
+icon: ArchiveRestore
 ---
+import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
+
+<InlineTOC items={toc} />
 
 Welcome to the docs! You can start writing documents in `/content/docs`.
 
-## What is Next?
+Hæ Jón!
+
+# Documentation Index
+
+## Products
 
 <Cards>
-  <Card title="Learn more about Next.js" href="https://nextjs.org/docs" />
-  <Card title="Learn more about Fumadocs" href="https://fumadocs.vercel.app" />
+  <Card title="Travel Agent" href="./travel-agent/introduction" />
+  <Card title="Travel Agent WordPress" href="./travel-agent-wordpress/introduction" />
+  <Card title="TA BookingForm" href="./ta-bookingform/introduction" />
 </Cards>
