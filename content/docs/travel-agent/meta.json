@@ -1,9 +1,9 @@
 {
   "title": "Travel Agent",
   "pages": [
-    "setup",
     "travel",
-    "data-management"
+    "data-management",
+    "setup"
   ],
   "root": true
 }
