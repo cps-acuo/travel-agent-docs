@@ -1,0 +1,10 @@
+{
+    "title": "Package",
+    "Pages": [
+        "travel-packages",
+        "travelers",
+        "travel-bookings",
+        "journal"
+    ],
+    "icon": "Package"
+}
