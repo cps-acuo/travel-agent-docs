@@ -1,10 +1,9 @@
 {
     "title": "Travel",
-    "Pages": [
+    "pages": [
         "package",
         "payments",
-        "reports",
-        "..."
+        "reports"
     ],
     "icon": "Map"
 }
