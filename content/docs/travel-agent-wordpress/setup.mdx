@@ -4,3 +4,65 @@ description: Instructions on setting up the Travel Agent WordPress product.
 ---
 
 This section provides instructions on how to set up the Travel Agent WordPress product.
+
+## Installation
+1. **Download the Plugin**: Obtain the Travel Agent WordPress plugin ZIP file from the official source or repository.
+2. **Upload the Plugin**: In your WordPress admin panel, navigate to `Plugins > Add New > Upload Plugin`. Choose the downloaded plugin ZIP file and click `Install Now`.
+3. **Activate the Plugin**: After installation, click `Activate` to enable the Travel Agent plugin on your site.
+
+## Configuration
+1. **Access Settings**: Go to `Settings > Travel Agent` in your WordPress admin panel.
+2. **Set Up Default Options**: Configure the default options for the Travel Agent plugin. This includes:
+    - **Expandable Iframe**:
+        - **Required** configurations:
+            - Default Iframe URL sets the URL of the Iframe that will be set on the booking button on posts created for the travel packages.
+                - This URL should be set as the URL to your [Travel Agent booking form page](/docs/ta-bookingform) page.
+        - **Optional** configurations:
+            - Button Text Booking sets the text that will be displayed on the booking button.
+            - Button Text Waitlist sets the text that will be displayed on the booking button when the package is fully booked and the user can only join a waitlist.
+            - Close Button Text sets the text that will be displayed on the booking button when the Iframe is expanded.
+            - Button Color sets the color of the booking button.
+            - Button Text Color sets the text color of the booking button.
+            - Button Width sets the width of the booking button.
+            - Button Icon sets the icon that will be displayed on the booking button.
+            - Use URL Segment sets whether to use the URL segment to determine the travel package the booking is for.
+            - URL Segment sets the URL segment that will be used to determine the travel package the booking is for (Should be the external ID of the travel package).
+            - Booking Redirect Link sets the URL to redirect the user after a successful booking.
+            - Waitlist Redirect Link sets the URL to redirect the user after a successful waitlist registration.
+            - Iframe Width sets the width of the Iframe that will be displayed when the booking button is clicked.
+            - Iframe Height sets the height of the Iframe that will be displayed when the booking button is clicked.
+            - Dynamic Resize sets whether the Iframe should use the dynamic resize feature to adjust its height based on the content (Only works with the Travel Agent booking page).
+    - **API and Filter**:
+        - **Required** configurations:
+            - API Key generates an API key that can be used to allow another application to access the Travel Agent WordPress API.
+                - Generate an API key and set it in the Travel Agent Power APP platform under the desired brand.
+                - **Important**: The key is only shown once after generating so store it somewhere secure and do not expose it in client-side code or anywhere public.
+            - Package Post Type sets the post type that will be used for the travel package posts.
+                - Set this to the post type that you want to use for the travel packages (e.g., "travel_package").
+            - Destination Taxonomy sets the taxonomy that will be used for the destination categories of the travel package posts.
+                - Set this to the taxonomy that you want to use for the destination categories (e.g., "destination").
+            - Experience Taxonomy sets the taxonomy that will be used for the experience categories of the travel package posts.
+                - Set this to the taxonomy that you want to use for the experience categories (e.g., "experience").
+            - Period Taxonomy sets the taxonomy that will be used for the period categories of the travel package posts.
+                - Set this to the taxonomy that you want to use for the period categories (e.g., "period").
+            - Integration Status sets the integration status of the Travel Agent WordPress plugin.
+                - Set this to "Migration" or "Live" depending on your current needs.
+                    - "Migration" turns off the creation of posts for incoming packages, allowing you to migrate existing packages from the Travel Agent Power APP platform to WordPress without affecting the live site.
+                    - "Live" enables the creation of posts for incoming packages, making them immediately available on the live site.
+        - **Optional** configurations:
+            - Post Status sets the post status that the travel package posts will need to have to show up on the frontend to the users (default is "published" which is the standard WordPress post status and is usually sufficient).
+    - **Booking Form**:
+        - **Optional** configurations:
+            - Remove color sets the color of the remove button on the booking form.
+            - Corner radius sets the corner radius of the booking form.
+            - Border sets the color of the border of the booking form.
+            - Input Border sets the color of the input fields border on the booking form.
+            - Booking Form Card sets the color of the background of the booking form cards for individual travelers.
+            - Background Card sets the background color behind the booking form cards.
+            - Text sets the text color of the booking form.
+            - Muted Text sets the muted text color of the booking form.
+            - On Hover sets the color of the background of select inputs when hovered on the booking form.
+            - Submit sets the color of the submit button on the booking form.
+            - Submit on Hover sets the color of the submit button when hovered on the booking form.
+
+3. **Save Changes**: After configuring the settings, click `Save Changes` to apply the new settings.

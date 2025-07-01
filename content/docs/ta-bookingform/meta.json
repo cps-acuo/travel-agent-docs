@@ -5,7 +5,8 @@
     "setup",
     "usage",
     "integration",
-    "faq"
+    "faq",
+    "features"
   ],
   "root": true
 }
