@@ -1,0 +1,10 @@
+{
+    "title" : "Package Setup",
+    "pages" : [
+        "package-actions",
+        "payment-setup",
+        "package-prices",
+        "package-addons"
+    ],
+    "icon" : "PackageOpen"
+}

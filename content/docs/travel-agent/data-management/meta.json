@@ -1,0 +1,8 @@
+{
+    "title" : "Data Management",
+    "pages" : [
+        "package-setup",
+        "package-data"
+    ],
+    "icon" : "Library"
+}
