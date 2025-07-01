@@ -28,8 +28,6 @@ jobs:
           node-version: '24.x'
       - name: Install dependencies and build
         run: npm install && npm run build
-      - name: List files
-        run: ls -la
       - name: Install OIDC Client from Core Package
         run: npm install @actions/core@1.6.0 @actions/http-client
       - name: Get Id Token
