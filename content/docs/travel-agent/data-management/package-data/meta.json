@@ -1,0 +1,12 @@
+{
+    "title" : "Package Data",
+    "pages" : [
+        "journal-lines",
+        "journal-line-addons",
+        "travelers-actions",
+        "travelers-addons",
+        "execution-tasks",
+        "travel-emails"
+    ],
+    "icon" : "PackageCheck"
+}

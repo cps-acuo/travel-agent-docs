@@ -1,0 +1,10 @@
+{
+    "title": "Payments",
+    "pages": [
+        "claims-collections",
+        "payment-claims",
+        "payments-imported",
+        "payment-checkouts"
+    ],
+    "icon": "DollarSign"
+}
