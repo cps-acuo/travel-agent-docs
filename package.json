@@ -8,6 +8,9 @@
     "start": "next start",
     "postinstall": "fumadocs-mdx"
   },
+  "engines": {
+    "node": ">= 20.0.0"
+  },
   "dependencies": {
     "fumadocs-core": "^15.5.3",
     "fumadocs-mdx": "11.6.9",
