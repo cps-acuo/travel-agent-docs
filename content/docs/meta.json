@@ -4,6 +4,7 @@
         "index",
         "travel-agent",
         "travel-agent-wordpress",
-        "ta-bookingform"
+        "ta-bookingform",
+        "reusable-doc-template"
     ]
 }

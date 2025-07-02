@@ -26,30 +26,6 @@ This project is a documentation website built with FumaDocs, a Next.js-based doc
 
 When writing commit messages, please adhere to the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/). This helps to maintain a clear and descriptive commit history.
 
-## Example Page Structure
-
-```mdx
----
-title: Example Page
-description: This is an example page.
----
-import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
-
-
-<InlineTOC />
-
-# Example Page
-
-This is the main content of the page.
-
-## Section 1
-
-Content for section 1.
-
-## Section 2
-
-Content for section 2.
-```
 
 ## External Documentation
 
