@@ -10,6 +10,6 @@ export const source = loader({
   source: docs.toFumadocsSource(),
   icon(icon) {
     if (icon && icon in icons) return createElement(icons[icon as keyof typeof icons]);
-    return createElement(icons['FileText']); // Fallback to 'FileText' icon
+    return; // Fallback to 'FileText' icon
   },
 });
