@@ -8,76 +8,38 @@ import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
 import { Card, Cards } from 'fumadocs-ui/components/card';
 
-
-# Main Happy Path
+# Payment Methods Setup
 
 <Steps>
-
 <Step>
-## First Action
+## Navigating to the Payment Methods Page
 
-[Detailed explanation of the first step]
+The main **Payment Methods** page provides an overview of all existing payment methods within the system. From here, you can view, manage, and create new payment methods.
 
-![Alt text for the image](/images/travel-agent/travel-package.png)
-
-```bash
-# Example command or code snippet
-npm install package-name
-```
+![The Payment Methods page in Travel Agent](/images/travel-agent/setup-payment-method-view.png)
 </Step>
+
 <Step>
-## Second Action
+## Payment Method Types
 
-[Detailed explanation of the second step]
+When creating a new payment method, you will be prompted to select a type. The available types are:
+- **Straumur**
+- **Bank Account**
+- **Credit Card**
+- **PayPal**
+- **Other**
 
-```javascript
-// Example code snippet
-const example = {
-  key: 'value',
-  method: () => {
-    console.log('Example function');
-  }
-};
-```
+![The Payment Method Types](/images/travel-agent/setup-payment-method-types.png)
 </Step>
-<Step>
-## Third Action
 
-[Detailed explanation of the third step]
+<Step>
+## Defining the Payment Method Details
+
+In the **New Payment Method** window, you need to fill in the details for the payment method. Once you have entered the required information, you can save the new payment method.
+
+![The New Payment Method creation window](/images/travel-agent/setup-payment-method-new-form.png)
 </Step>
 </Steps>
-
-# Configuration
-
-<Tabs items={['Option 1', 'Option 2']}>
-  <Tab value="Option 1">
-    Content for Option 1
-  </Tab>
-  <Tab value="Option 2">
-    Content for Option 2
-  </Tab>
-</Tabs>
-
-
-# Features
-
-## Custom Anchor [#custom-anchor]
-
-You can link directly to this heading using `[link text](/docs/reusable-doc-template#custom-anchor)`.
-
-## This heading is excluded from the TOC [!toc]
-
-This heading will not appear in the table of contents on the right side of the page.
-
-## Feature 3
-
-[Description of feature 3 and how to use it]
-
-# Troubleshooting
-
-<Callout type="warn">
-  Common issues and their solutions are listed below.
-</Callout>
 
 # Related Resources
 
@@ -93,14 +55,6 @@ This heading will not appear in the table of contents on the right side of the p
     description="Description of the external resource"
   />
 </Cards>
-
-# Next Steps
-
-After completing this guide, you might want to:
-
-1. [Next action 1](./next-page-1)
-2. [Next action 2](./next-page-2)
-3. [Next action 3](./next-page-3)
 
 ---
 

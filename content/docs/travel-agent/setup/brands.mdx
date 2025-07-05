@@ -1,83 +1,43 @@
 ---
 title: Brands
-descriptions: Brands are your travel agencies that offer travel services.
+description: Brands are your travel agencies that offer travel services.
 icon: Tag
 ---
 import { Callout } from 'fumadocs-ui/components/callout';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
-import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
 import { Card, Cards } from 'fumadocs-ui/components/card';
 
 
-# Main Happy Path
+# Brands Setup
 
 <Steps>
-
 <Step>
-## First Action
+## Navigating to the Brands Page
 
-[Detailed explanation of the first step]
+The main **Brands** page provides an overview of all existing brands within the system. From here, you can view, manage, and create new brands.
 
-![Alt text for the image](/images/travel-agent/travel-package.png)
-
-```bash
-# Example command or code snippet
-npm install package-name
-```
+![The Brands page in Travel Agent](/images/travel-agent/setup-brands-view.png)
 </Step>
+
 <Step>
-## Second Action
+## Creating a New Brand
 
-[Detailed explanation of the second step]
-
-```javascript
-// Example code snippet
-const example = {
-  key: 'value',
-  method: () => {
-    console.log('Example function');
-  }
-};
-```
+To create a new brand, click on the **New** button in the command bar. This will open the form for a new brand. The most important fields are:
+- **No.**
+- **Name**
+- **Default Currency Code**
+- **Default Pmt. Method**
+- **Default Pmt. Terms Code**
 </Step>
-<Step>
-## Third Action
 
-[Detailed explanation of the third step]
+<Step>
+## Defining the Brand Details
+
+In the **New Brand** window, you need to fill in the details for the brand. Once you have entered the required information, you can save the new brand.
+
+![The New Brand creation window](/images/travel-agent/setup-brand-form-new.png)
 </Step>
 </Steps>
-
-# Configuration
-
-<Tabs items={['Option 1', 'Option 2']}>
-  <Tab value="Option 1">
-    Content for Option 1
-  </Tab>
-  <Tab value="Option 2">
-    Content for Option 2
-  </Tab>
-</Tabs>
-
-
-# Features
-
-## Custom Anchor [#custom-anchor]
-
-You can link directly to this heading using `[link text](/docs/reusable-doc-template#custom-anchor)`.
-
-## This heading is excluded from the TOC [!toc]
-
-This heading will not appear in the table of contents on the right side of the page.
-
-## Feature 3
-
-[Description of feature 3 and how to use it]
-
-# Troubleshooting
-
-<Callout type="warn">
-  Common issues and their solutions are listed below.
-</Callout>
 
 # Related Resources
 
@@ -93,14 +53,6 @@ This heading will not appear in the table of contents on the right side of the p
     description="Description of the external resource"
   />
 </Cards>
-
-# Next Steps
-
-After completing this guide, you might want to:
-
-1. [Next action 1](./next-page-1)
-2. [Next action 2](./next-page-2)
-3. [Next action 3](./next-page-3)
 
 ---
 
