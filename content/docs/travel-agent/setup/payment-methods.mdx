@@ -21,7 +21,7 @@ The main **Payment Methods** page provides an overview of all existing payment m
 <Step>
 ## Payment Method Types
 
-When creating a new payment method, you will be prompted to select a type. The available types are:
+When creating a new payment method, you need to select a type. The available types are:
 - **Straumur**
 - **Bank Account**
 - **Credit Card**
@@ -34,24 +34,38 @@ When creating a new payment method, you will be prompted to select a type. The a
 <Step>
 ## Defining the Payment Method Details
 
-In the **New Payment Method** window, you need to fill in the details for the payment method. Once you have entered the required information, you can save the new payment method.
+In the **New Payment Method** window, you need to fill in the details for the payment method. For most payment methods, you will provide a name and select the type. 
+
+Under the **Credit Card Service** section, there are additional fields for configuring the **Straumur Payment Link** integration:
+- **Access URL**: The main endpoint for Straumur Services.
+- **Returning URL**: The URL where the customer will be redirected after finishing the payment process.
+- **Session Lifetime**: How long the payment session will remain active. If the session expires, a new one will be created with the same lifetime.
+- **Theme Key**: Used to customize the appearance of the payment page which is configured at the **Straumur** merchant portal.
+
+You can also configure the **Payment Email URL**, which is the link that appears in the email body. The Power App will concatenate an ID to this link (usually you would put the Booking Form checkout endpoint).
+
+The **Email Template** is a rich text field that allows you to customize the email content. You can use the following placeholders, which must be typed exactly as shown, to insert dynamic information:
+- `<PackageName>`
+- `<Amount>`
+- `<Link>`
+- `<Companysign>`
+- `<Companylogo>`
+
+These placeholders will be replaced with the relevant information when the email is sent. The dynamic content for `<Companysign>` and `<Companylogo>` is configured in the [Brands section](/docs/travel-agent/setup/brands).
 
 ![The New Payment Method creation window](/images/travel-agent/setup-payment-method-new-form.png)
 </Step>
+
+
 </Steps>
 
 # Related Resources
 
 <Cards>
   <Card
-    href="./related-page"
-    title="Related Page"
-    description="Description of the related page"
-  />
-  <Card
-    href="https://example.com"
-    title="External Resource"
-    description="Description of the external resource"
+    href="/docs/travel-agent/setup/brands"
+    title="Brands Setup"
+    description="Configure company signature and logo for dynamic email content."
   />
 </Cards>
 
