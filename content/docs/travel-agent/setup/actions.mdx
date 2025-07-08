@@ -1,9 +1,63 @@
 ---
 title: Actions
-descriptions: Actions are
+description: Actions in Travel Agent are used to classify different actions within travel package. For example, flights from a specific airlane, hotels from a vendor or chain etc.
 icon: LandPlot
 ---
 
-# Actions are the extra options you can take when you are on a trip.
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Card, Cards } from 'fumadocs-ui/components/card';
 
-Some text about actions.
+
+<Steps>
+<Step>
+## Navigating to the Actions Page
+
+The main **Actions** page provides an overview of all existing actions within the system. From here, you can view, manage, and create new actions.
+
+![The Actions page in Travel Agent](/images/travel-agent/setup-actions-view.png)
+</Step>
+
+
+<Step>
+## Creating a New Action
+
+To create a new action, click on the **New** button in the command bar.
+
+![The New Action creation window](/images/travel-agent/setup-new-action.png)
+
+
+The main fields are **Action Name** and **Action Type**. For the **Action Name**, choose a descriptive name that clearly identifies the action (e.g., 'British Airways Flight'). You must also choose an **Action Type** from the dropdown menu. The options are as follows:
+- Flight
+- Hotel
+- Tours
+- Transport
+- Food & Beverage
+- Other
+
+
+
+</Step>
+</Steps>
+
+# Related Resources
+
+<Cards>
+  <Card
+    href="./related-page"
+    title="Related Page"
+    description="Description of the related page"
+  />
+  <Card
+    href="https://example.com"
+    title="External Resource"
+    description="Description of the external resource"
+  />
+</Cards>
+
+---
+
+<Callout type="info">
+  **Need help?** If you encounter any issues or have questions, please refer to our [FAQ](./faq) or [contact support](mailto:support@example.com).
+</Callout>

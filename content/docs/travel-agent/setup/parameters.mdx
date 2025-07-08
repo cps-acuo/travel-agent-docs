@@ -3,5 +3,56 @@ title: Parameters
 description: Parameters are parts of the main setup and configure various services.
 icon: Variable
 ---
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Card, Cards } from 'fumadocs-ui/components/card';
 
-some text about parameters.
+
+The **Parameters** page is where you configure the initial settings for Travel Agent, including connections to external services. This is typically done during the first-time setup.
+
+<Steps>
+<Step>
+## General Settings
+
+The **General** tab contains fundamental settings for your Travel Agent instance.
+
+![General Parameters in Travel Agent](/images/travel-agent/setup-parameters-general.png)
+</Step>
+
+<Step>
+## Environment Variables
+
+The **Environment Variables** tab is used to set up environment-specific configurations.
+
+![Environment Variables in Travel Agent](/images/travel-agent/setup-parameters-env-vars.png)
+</Step>
+
+<Step>
+## External Services
+
+The **External** tab is where you connect to third-party services. For example, you can configure your Mailchimp integration here by providing the necessary API keys and list IDs.
+
+![External Service Parameters in Travel Agent](/images/travel-agent/setup-parameters-external.png)
+</Step>
+</Steps>
+
+# Related Resources
+
+<Cards>
+  <Card
+    href="./related-page"
+    title="Related Page"
+    description="Description of the related page"
+  />
+  <Card
+    href="https://example.com"
+    title="External Resource"
+    description="Description of the external resource"
+  />
+</Cards>
+
+---
+
+<Callout type="info">
+  **Need help?** If you encounter any issues or have questions, please refer to our [FAQ](./faq) or [contact support](mailto:support@example.com).
+</Callout>

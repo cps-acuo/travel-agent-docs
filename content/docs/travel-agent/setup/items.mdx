@@ -3,5 +3,52 @@ title: Items
 description: Items are templates for Travel Pakackages to make them more reusable.
 icon: Tickets
 ---
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Card, Cards } from 'fumadocs-ui/components/card';
 
-Some text about items.
+
+<Steps>
+<Step>
+## Navigating to the Items Page
+
+The main **Items** page provides an overview of all existing items within the system. From here, you can view, manage, and create new items.
+
+![The Items page in Travel Agent](/images/travel-agent/setup-items-view.png)
+</Step>
+
+<Step>
+## Creating a New Item
+
+To create a new item, click on the **New** button in the command bar. This will open the form for a new item.
+</Step>
+
+<Step>
+## Defining the Item Details
+
+In the **New Item** window, you need to fill in the details for the item. Once you have entered the required information, you can save the new item.
+
+![The New Item creation window](/images/travel-agent/setup-items-form.png)
+</Step>
+</Steps>
+
+# Related Resources
+
+<Cards>
+  <Card
+    href="./related-page"
+    title="Related Page"
+    description="Description of the related page"
+  />
+  <Card
+    href="https://example.com"
+    title="External Resource"
+    description="Description of the external resource"
+  />
+</Cards>
+
+---
+
+<Callout type="info">
+  **Need help?** If you encounter any issues or have questions, please refer to our [FAQ](./faq) or [contact support](mailto:support@example.com).
+</Callout>

@@ -1,6 +1,7 @@
 {
     "title" : "Setup",
     "pages" : [
+        "--- Base Data ---",
         "actions",
         "payment-methods",
         "brands",

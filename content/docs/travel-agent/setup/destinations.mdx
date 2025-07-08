@@ -1,7 +1,56 @@
 ---
 title: Destinations
-descriptions: Destinations are the locations that you offer to your clients.
+description: Destinations are the locations that travel packages can be associated with.
 icon: TreePalm
 ---
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Card, Cards } from 'fumadocs-ui/components/card';
 
-Some text about destinations.
+
+<Steps>
+<Step>
+## Navigating to the Destinations Page
+
+The main **Destinations** page provides an overview of all existing destinations within the system. From here, you can view, manage, and create new destinations.
+
+![The Destinations page in Travel Agent](/images/travel-agent/setup-destinations-view.png)
+</Step>
+
+<Step>
+## Creating a New Destination
+
+To create a new destination, click on the **New** button in the command bar. This will open the form for a new destination. The most important fields are:
+- **Destination Name**
+- **City**
+- **Country**
+- **Web Term Name**
+
+Once you have entered the required information, you can save the new destination.
+![The New Destination creation window](/images/travel-agent/setup-destinations-form-new.png)
+
+The Web Term Name is used to identify the destination for taxonomy purposes, such as in what category it belongs to on your website and it's important for the WordPress integration to work correctly.
+</Step>
+</Steps>
+
+# Related Resources
+
+<Cards>
+  <Card
+    href="./related-page"
+    title="Related Page"
+    description="Description of the related page"
+  />
+  <Card
+    href="https://example.com"
+    title="External Resource"
+    description="Description of the external resource"
+  />
+</Cards>
+
+---
+
+<Callout type="info">
+  **Need help?** If you encounter any issues or have questions, please refer to our [FAQ](./faq) or [contact support](mailto:support@example.com).
+</Callout>
