@@ -35,9 +35,9 @@ In the **New Item** window, you need to fill in the details for the item. Once y
 
 The General section contains the core information that defines each item in the Travel Agent system. These fields establish the item's identity, financial tracking, and marketing integration.
 
-- **Item ID**: Unique identifier for the item within the system
+- **Item ID**: Unique identifier
 - **Product Name**: Human-readable name that describes the item (e.g., "5-Day Iceland Adventure")
-- **Brand**: Lookup field connecting the item to a specific brand from the brands table
+- **Brand**: Lookup field connecting the item to your brand, this affects how the emails are sent for example
 - **Account Code**: Links the item to general ledger accounts for financial reporting
 - **MailChimp Tag**: Used for email campaign segmentation and marketing automation
 
@@ -53,11 +53,11 @@ This section configures the booking form behavior for the item on the website. T
 - **Show Header**: Controls whether header text is displayed on the booking form
 - **Show Prices**: Determines if pricing information is visible to customers
 - **Show Status**: Displays availability status (e.g., "Available", "Limited", "Sold Out")
-- **Reg. Passport**: Requires passport information during booking (name, number, expiry)
+- **Reg. Passport**: If the customers should register passport information during booking (name, number, expiry)
 - **Reg. Address**: Collects customer address information for billing and contact purposes
-- **Reg. SSN**: Requires Social Security Number for specific regulatory compliance
-- **Lookup SSN**: Enables verification against the Icelandic Registry for identity confirmation
-- **Picture**: Allows uploading of item images for the booking form
+- **Reg. SSN**: Requires Social Security Number to be provided during booking
+- **Lookup SSN**: Enables verification against the Icelandic Registry for automatic booking form population
+- **Picture**: If enabled, displays a picture of the item on the booking form
 
 ### Website Appearance Settings
 
