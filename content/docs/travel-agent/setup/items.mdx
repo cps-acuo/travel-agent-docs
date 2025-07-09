@@ -29,6 +29,48 @@ To create a new item, click on the **New** button in the command bar. This will 
 In the **New Item** window, you need to fill in the details for the item. Once you have entered the required information, you can save the new item.
 
 ![The New Item creation window](/images/travel-agent/setup-items-form.png)
+
+
+### General
+
+The General section contains the core information that defines each item in the Travel Agent system. These fields establish the item's identity, financial tracking, and marketing integration.
+
+- **Item ID**: Unique identifier for the item within the system
+- **Product Name**: Human-readable name that describes the item (e.g., "5-Day Iceland Adventure")
+- **Brand**: Lookup field connecting the item to a specific brand from the brands table
+- **Account Code**: Links the item to general ledger accounts for financial reporting
+- **MailChimp Tag**: Used for email campaign segmentation and marketing automation
+
+<Callout type="tip">
+  **Best Practice**: Maintain consistency in naming conventions across all general fields to ensure easy maintenance and clear system navigation.
+</Callout>
+
+### Website Booking Options
+
+This section configures the booking form behavior for the item on the website. These settings control how customers interact with the booking process and what information is collected.
+
+- **Max Travelers**: Sets the maximum number of travelers allowed in a single booking
+- **Show Header**: Controls whether header text is displayed on the booking form
+- **Show Prices**: Determines if pricing information is visible to customers
+- **Show Status**: Displays availability status (e.g., "Available", "Limited", "Sold Out")
+- **Reg. Passport**: Requires passport information during booking (name, number, expiry)
+- **Reg. Address**: Collects customer address information for billing and contact purposes
+- **Reg. SSN**: Requires Social Security Number for specific regulatory compliance
+- **Lookup SSN**: Enables verification against the Icelandic Registry for identity confirmation
+- **Picture**: Allows uploading of item images for the booking form
+
+### Website Appearance Settings
+
+This section configures how the item appears on WordPress pages and controls the display of availability information to customers.
+
+- **Destination**: Sets the destination associated with this item for page categorization
+- **Term Destination**: Configures destination taxonomy terms for WordPress integration
+- **Term Experience**: Sets experience type classification for filtering and display
+- **Description (excerpt)**: Brief description that appears on listing pages and previews
+- **Design Post Id**: Links to specific WordPress post design templates
+- **X Seats Left**: Threshold number for displaying "seats left" urgency messaging
+- **Few Seats Left**: Lower threshold that triggers "few seats left" notifications
+
 </Step>
 </Steps>
 
