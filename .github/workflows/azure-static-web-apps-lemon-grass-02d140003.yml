@@ -55,7 +55,7 @@ jobs:
           ###### End of Repository/Build Configurations ######
 
       - name: Comment Preview URL on PR
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && github.event.action == 'opened'
         uses: actions/github-script@v6
         with:
           script: |
