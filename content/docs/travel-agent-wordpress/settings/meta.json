@@ -1,0 +1,9 @@
+{
+    "title" : "Settings",
+    "pages" : [
+        "expandable-iframe",
+        "api-and-filter",
+        "booking-form-styles",
+        "ta-bookingform"
+    ]
+}
