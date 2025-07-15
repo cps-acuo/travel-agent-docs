@@ -12,7 +12,7 @@ import { Card, Cards } from 'fumadocs-ui/components/card';
 <Step>
 ## Navigating to the Items Page
 
-The main **Items** page provides an overview of all existing items within the system. From here, you can view, manage, and create new items.
+The main **Items** page provides an overview of all existing items. From here, you can view, manage, and create new items.
 
 ![The Items page in Travel Agent](/images/travel-agent/setup-items-view.png)
 </Step>
@@ -51,22 +51,22 @@ This section configures the booking form behavior for the item on the website. T
 
 - **Max Travelers**: Sets the maximum number of travelers allowed in a single booking
 - **Show Header**: Controls whether header text is displayed on the booking form
-- **Show Prices**: Determines if pricing information is visible to customers
-- **Show Status**: Displays availability status (e.g., "Available", "Limited", "Sold Out")
-- **Reg. Passport**: If the customers should register passport information during booking (name, number, expiry)
-- **Reg. Address**: Collects customer address information for billing and contact purposes
-- **Reg. SSN**: Requires Social Security Number to be provided during booking
-- **Lookup SSN**: Enables verification against the Icelandic Registry for automatic booking form population
-- **Picture**: If enabled, displays a picture of the item on the booking form
+- **Show Prices**: Determines if pricing information is visible on website
+- **Show Status**: Displays availability status ("Few seats left", " Only {x} seats left ", "Sold Out") if enabled
+- **Reg. Passport**: Require registering passport information during booking (Passport number, Sex, Issue Date, Expiration Date, Birthday) if enabled
+- **Reg. Address**: Register address during booking if enabled
+- **Reg. SSN**: Requires Social Security Number to be registered during booking
+- **Lookup SSN**: Enables web serviced lookup for SSN for automatic population of name and address.
+- **Picture**: Stores URL for picture to displays on booking form - if empty then there will be no picture shown.
 
 ### Website Appearance Settings
 
-This section configures how the item appears on WordPress pages and controls the display of availability information to customers.
+ This section configures how the travel package appears on sales web pages (like WordPress) and controls display of availability information to visitors.
 
 - **Destination**: Sets the destination associated with this item
-- **Term Destination**: Configures destination taxonomy terms for WordPress integration
-- **Term Experience**: Sets experience type classification for filtering in WordPress
-- **Description (excerpt)**: Brief description that appears on gallery listings and search results
+- **Term Destination**: Configures destination taxonomy terms for sales web page, if left empty then the value is defaulted to the one defined in Destination
+- **Term Experience**: Sets experience type classification for filtering in sales web page (like WordPress)
+- **Description (excerpt)**: Brief description that appears on gallery listings and search results for travel packages post (on sales website). Can be changed for individual package customization.
 - **Design Post Id**: Links to specific WordPress post that will be used as a template for the item
 - **X Seats Left**: Threshold number for displaying "seats left" notification on the booking form
 - **Few Seats Left**: The threshold that triggers "few seats left" notification. So if you set this to 5, it will show "Few Seats Left" when there are 5 or fewer seats available
