@@ -1,33 +1,31 @@
 ---
 title: Travel Packages
-description: Detailed guide to creating and managing travel packages, including configuration, booking, and lifecycle management.
+description: Travel Packages is the first screen you see when opening the application. It provides an overview of all travel packages, allowing you to manage and create new ones.
 icon: TicketsPlane
 ---
 
-# Travel Packages
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Card, Cards } from 'fumadocs-ui/components/card';
 
-The Travel Packages section is where you define the trips you'll offer to your customers. From setting itineraries to managing availability, travel packages are central to your operations.
+<Steps>
+<Step>
+## Navigating to the Travel Packages Page
 
-## Key Elements of Travel Packages
+![The Travel Packages page in Travel Agent](/images/travel-agent/travel-packages-active-view-1.png)
+</Step>
+<Step>
+## Creating a new Travel Package
+To create a new travel package, click on the **New** button in the command bar. But sometimes you might want to create a travel package from an existing one. In that case, you have to select an existing travel package (you can also select multiple) and click on the **Clone** button in the command bar.
+![The Clone button in the command bar](/images/travel-agent/travel-packages-clone-feature.png)
 
-- **Name & Dates**: Clearly define the package name and the duration (From Date and To Date).
-- **Package Configuration**: Configure actions such as flights, hotels, and tours, as well as booking options.
-- **Status Management**: Packages move through stages: "In Preparation", "In Sales", and "Closed".
-- **Capacity & Booking**: Manage Max Rooms and Max Pax to control booking limits.
-- **Pricing & Payments**: Set payment plans and terms to manage financial aspects.
+### What are Travel Packages?
+Travel packages are collections of the basic information needed to create trips, view bookings and manage the itinerary.
+These Travel Package include details such as:
+- **Name**: A descriptive name for the travel package.
+- **Item**: The related item, for setting up defults for the package.
+- **Status**: The current status of the travel package ()
+</Step>
 
-## Creating & Managing Packages
-
-1. **Create a New Package**: Start by defining trip details—name, dates, and main activities.
-2. **Configure Options**: Set up booking and website display settings.
-3. **Define Pricing**: Establish clear pricing schemes and payment plans.
-4. **Manage Availability**: Adjust package maximums and booking requirements based on demand.
-5. **Transition Stages**: Move packages through their lifecycle: "In Preparation" to "In Sales" then "Closed" when no longer available.
-
-## Integration with Other Sections
-
-- **Travelers**: Track traveler details linked to specific packages.
-- **Travel Bookings**: Coordinate booking logistics related to available packages.
-- **Journal**: Document interactions and modifications throughout a package's lifecycle.
-
-This section offers the robust tools you need to effectively manage everything from individual trip offerings to entire catalogs of available journeys.
+</Steps>
