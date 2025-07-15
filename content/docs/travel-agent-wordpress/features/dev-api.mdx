@@ -1,6 +1,167 @@
 ---
-title: Developer API
-description: Learn about the Developer API feature of the Travel Agent WordPress plugin.
+title: "Developer API"
+description: "Overview of the Travel Agent plugin's REST API for external integrations."
 ---
 
-# ...
+
+The Developer API lets you manage travel packages and bookings programmatically. Authenticate using your API key and interact with the following endpoints to create, read, update, and delete data.
+
+## Authentication
+
+All requests require an API key header:
+
+```http
+X-API-Key: YOUR_API_KEY_HERE
+```  
+Ensure you keep this key secure—never expose it in client-side code.
+
+## Rate Limiting
+
+- **100 requests/minute** per API key.
+- Returns a `429 Too Many Requests` header when exceeded.
+
+## Endpoints
+
+### 1. Package Management
+
+#### Add Package
+
+```http
+POST /travel-agent/v1/add-package
+Content-Type: application/json
+```  
+**Request Body** (JSON)
+```json
+{
+  "guid": "string",
+  "brand_name": "string",
+  "external_id": "string",
+  "name": "string",
+  "destination": "string",
+  "web_term_name": "string",
+  "item_description": "string",
+  "experience": "string",
+  "travel_period": "string",
+  "image": "string",
+  "start_date": "YYYY-MM-DD",
+  "end_date": "YYYY-MM-DD",
+  "package_stage": 1,
+  "waitlist": true,
+  "allow_waitlist": false,
+  "display_text": "string",
+  "page_template_id": 42,
+  "item_id": "string"
+}
+```  
+**Response** (200 OK)
+```json
+{
+  "message": "Package added successfully",
+  "package": { /* full package object */ },
+  "code": 200
+}
+```
+
+#### Update Package
+
+```http
+PUT /travel-agent/v1/update-package
+Content-Type: application/json
+```  
+Use the **same request body** as **Add Package**.  
+**Response** (200 OK)
+```json
+{
+  "message": "Package updated successfully",
+  "package": { /* updated package object */ },
+  "code": 200
+}
+```
+
+#### Find Package
+
+```http
+GET /travel-agent/v1/find-package/<GUID>
+```  
+Retrieves a package by its unique GUID.  
+**Response** (200 OK)
+```json
+{ /* package object */ }
+```
+
+#### Delete Package
+
+```http
+DELETE /travel-agent/v1/delete-package/<GUID>
+```  
+Deletes the specified package.  
+**Response** (200 OK)
+```json
+{
+  "message": "Package deleted successfully",
+  "code": 200
+}
+```
+
+### 2. Post Management
+
+#### Refresh Post
+
+```http
+POST /travel-agent/v1/refresh-post/<GUID>
+```  
+Compares package data to its WordPress post and updates the post if needed.  
+**Response** (200 OK)
+```json
+{
+  "message": "Post refreshed successfully",
+  "post_id": 123,
+  "code": 200
+}
+```
+
+#### Generate Post Using Template
+
+```http
+POST /travel-agent/v1/generate-post-using-template/<GUID>
+```  
+Creates a new post from the package and its assigned template.  
+**Response** (200 OK)
+```json
+{
+  "message": "Post generated successfully",
+  "post_id": 456,
+  "code": 200
+}
+```
+
+#### Generate Post from Package
+
+```http
+POST /travel-agent/v1/generate-post-using-package/<GUID>
+```  
+Generates a blank post populated with package data only.  
+**Response** (200 OK)
+```json
+{
+  "message": "Post generated successfully",
+  "post_id": 789,
+  "code": 200
+}
+```
+
+### 3. Booking Form Management
+
+#### Reset Booking Form
+
+```http
+POST /travel-agent/v1/reset-booking-form/<GUID>
+```  
+Clears customizations and restores default booking form settings for the package.
+
+**Response** (200 OK)
+```json
+{
+  "message": "Booking form reset successfully",
+  "code": 200
+}

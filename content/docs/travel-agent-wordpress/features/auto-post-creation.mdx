@@ -1,6 +1,50 @@
 ---
-title: Automatic Post Creation
-description: Learn about the auto post creation feature of the Travel Agent WordPress plugin.
+title: "Automatic Post Creation"
+description: "How the Travel Agent plugin auto-creates and updates WordPress posts for your packages."
 ---
 
-# ...
+The Travel Agent plugin hooks into package **create** and **update** events and ensures each package has a corresponding WordPress post—no manual steps needed.
+
+## 1. Trigger Points
+
+- **On New Package**  
+  Runs when a package is first added in the Power APP platform.
+- **On Package Update**  
+  Runs if a package is updated and no post exists yet.
+
+## 2. Creation Logic
+
+### 2.1 Template-Based
+1. Check for a **template_id** on the package (e.g. `42`).
+2. If present, clone that template’s structure (title, shortcodes, layout) into a new post.
+
+### 2.2 Fallback
+1. If no template is set, generate a **blank post**:
+   - **Title**: Uses the package title.
+   - **Content**: Includes the excerpt, images, and a default booking button element.
+   
+## 3. Post Updating
+
+If an existing package is updated **and** its post was deleted or missing, the same logic above re-runs to recreate it automatically.
+
+## 4. Post Details
+
+- **Content**  
+  Title, excerpt, featured image(s), and booking button (if your template includes it).  
+- **Status**  
+  - Maps “Available” packages to `published`.  
+  - Maps “Draft” or “Pending” packages to `draft`.  
+- **Visibility**  
+  Controlled by the **Post Status** setting in `Settings → Travel Agent`.  
+- **Taxonomies**  
+  Automatically assigns:
+  - **Destination** (from package destination)  
+  - **Experience** (from package experience)  
+  - **Period** (from departure date)  
+
+## 5. Configuration
+
+In **Settings → Travel Agent**:
+
+- **Integration Status** → `Live` (turns this feature on)  
+- **Post Status** → Minimum status required for frontend visibility (default: `published`)
