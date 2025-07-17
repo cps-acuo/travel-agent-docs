@@ -16,9 +16,9 @@ This project is a documentation website built with FumaDocs, a Next.js-based doc
 ## Directory Structure
 
 - `content/docs`: Contains the MDX files for the documentation.
-  - `travel-agent/`: Documentation for the Travel Agent product.
-  - `travel-agent-wordpress/`: Documentation for the Travel Agent WordPress product.
-  - `ta-bookingform/`: Documentation for the TA BookingForm product.
+  - `travel-agent/`: Documentation for the Travel Agent Operations product.
+  - `travel-agent-wordpress/`: Documentation for the Travel Agent WordPress Plugin product.
+  - `travel-agent-web-bookings/`: Documentation for the Travel Agent Web Bookings product.
 - `src/app`: Contains the Next.js application code.
 - `src/mdx-components.tsx`: Defines custom MDX components.
 

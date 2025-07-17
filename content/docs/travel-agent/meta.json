@@ -1,10 +1,9 @@
 {
-  "title": "Travel Agent",
+  "title": "Travel Agent Operations",
   "pages": [
     "travel",
     "data-management",
     "setup"
   ],
-  "root": true,
-  "icon": "CirclePower"
+  "root": true
 }
