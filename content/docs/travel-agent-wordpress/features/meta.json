@@ -1,0 +1,11 @@
+{
+    "title" : "Features",
+    "pages" : [
+        "auto-package-sync",
+        "auto-post-creation",
+        "cust-booking-button",
+        "cust-booking-form",
+        "dev-api",
+        "filter-grid"
+    ]
+}
