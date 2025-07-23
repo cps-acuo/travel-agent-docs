@@ -1,0 +1,26 @@
+---
+title: "Responsive Design"
+description: "Learn how the Travel Agent booking form adapts seamlessly across devices using Next.js, React, and shadcn styling."
+---
+
+The Travel Agent booking form is built with **Next.js** and **React**, using **shadcn/ui** components and Tailwind CSS under the hood. It follows a **mobile-first**, fluid layout strategy to ensure optimal usability on all screen sizes.
+
+## Core Principles
+
+- **Mobile-First Breakpoints**  
+  Styles begin at the smallest viewport and scale up. Default breakpoints mirror Tailwind’s (`sm`, `md`, `lg`, `xl`).
+- **Flexible Containers**  
+  The `<BookingForm>` component uses CSS Grid and Flexbox to reorganize fields and buttons based on available width.
+- **Fluid Typography & Spacing**  
+  Uses relative units (`rem`, `%`) and CSS variables for padding, margins, and font sizes—adjusting automatically between breakpoints.
+- **Iframe Responsiveness**  
+  The embedded form listens for container width changes (via `ResizeObserver`) and applies matching layout classes.
+
+## shadcn/UI Integration
+
+- **Utility-First**  
+  All components leverage Tailwind utility classes for responsive variants (e.g., `md:grid-cols-2`, `lg:px-8`).
+- **Configurable Tokens**  
+  Customize breakpoints or spacing scales by extending your Tailwind config and rebuilding the form bundle.
+
+> For advanced layout options and style overrides, see the [Booking Form Styling Guide](/docs/ta-bookingform/configurations/stylings).

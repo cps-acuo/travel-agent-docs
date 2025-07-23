@@ -3,10 +3,8 @@
   "pages": [
     "introduction",
     "setup",
-    "usage",
-    "integration",
-    "faq",
-    "features"
+    "features",
+    "configurations"
   ],
   "root": true
 }

@@ -1,0 +1,32 @@
+---
+title: "Booking Form Customization"
+description: "Brief overview of styling options for the Travel Agent booking form."
+---
+
+Easily tailor the look-and-feel of your embedded booking form by sending style instructions from your page to the iframe via `postMessage`. The booking form supports:
+
+- **Color Overrides**  
+  Customize primary, secondary, accent colors, and more to match your theme.
+- **Border Radius**  
+  Control corner rounding on cards, inputs, and buttons for a cohesive design.
+
+:::note
+For a full list of style properties and configuration examples, see the [Booking Form Styling Guide](/docs/ta-bookingform/configurations/stylings).
+:::
+
+```js
+// Example: change primary color and border radius
+document.getElementById('booking-iframe').contentWindow.postMessage(
+  {
+    type: 'TA_STYLE_UPDATE',
+    styles: {
+      '--ta-primary-color': '#0055A4',
+      '--ta-border-radius': '8px'
+    }
+  },
+  '*'
+);
+```
+
+Add these calls on your page before or after rendering the `<iframe>` to apply custom styles instantly.
+This works out of the box with the [Travel Agent WordPress plugin](/docs/travel-agent-wordpress), or any custom implementation that uses the booking form iframe.
