@@ -1,7 +1,65 @@
 ---
 title: Brands
-descriptions: Brands are the different companies that offer travel services.
+description: Brands are your travel agencies that offer travel services.
 icon: Tag
 ---
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Card, Cards } from 'fumadocs-ui/components/card';
 
-Some text about brands.
+
+<Steps>
+<Step>
+## Navigating to the Brands Page
+
+The main **Brands** page provides an overview of all existing brands within the system. From here, you can view, manage, and create new brands.
+
+![The Brands page in Travel Agent](/images/travel-agent/setup-brands-view.png)
+</Step>
+
+<Step>
+## Creating a New Brand
+
+To create a new brand, click on the **New** button in the command bar. This will open the form for a new brand.
+
+</Step>
+
+<Step>
+## Defining the Brand Details
+
+In the **New Brand** window, you need to fill in the details for the brand. This page is divided into two main sections: **Web Page Connection** and **Payment Link**.
+
+### Web Page Connection
+This section is used to manage connections to different WordPress websites. You can also configure a **Help Text** field that will be displayed on the booking form.
+
+### Payment Link
+This section allows you to configure the email settings for payment links:
+- **Email From**: The email address that will appear as the sender.
+- **Email Signature Logo**: A URL to an image that will be used as the logo in the email signature.
+- **Brand Email Signature**: The text that will appear at the end of the email.
+- **Link Text**: The text that will be displayed for the payment link instead of the full URL.
+
+![The New Brand creation window](/images/travel-agent/setup-brand-form-new.png)
+</Step>
+</Steps>
+
+# Related Resources
+
+<Cards>
+  <Card
+    href="./payment-methods"
+    title="Payment Methods"
+    description="Configure payment methods and email templates."
+  />
+  <Card
+    href="https://example.com"  
+    title="External Resource"
+    description="Description of the external resource"
+  />
+</Cards>
+
+---
+
+<Callout type="info">
+  **Need help?** If you encounter any issues or have questions, please refer to our [FAQ](./faq) or [contact support](mailto:support@example.com).
+</Callout>

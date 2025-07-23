@@ -1,7 +1,97 @@
 ---
 title: Items
-description: Items are templates for Travel Pakackages to make them more reusable.
+description: Items are templates for Travel Pakackages to make them reusable.
 icon: Tickets
 ---
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Card, Cards } from 'fumadocs-ui/components/card';
 
-Some text about items.
+
+<Steps>
+<Step>
+## Navigating to the Items Page
+
+The main **Items** page provides an overview of all existing items. From here, you can view, manage, and create new items.
+
+![The Items page in Travel Agent](/images/travel-agent/setup-items-view.png)
+</Step>
+
+<Step>
+## Creating a New Item
+
+To create a new item, click on the **New** button in the command bar. This will open the form for a new item.
+</Step>
+
+<Step>
+## Defining the Item Details and Sections
+
+In the **New Item** window, you need to fill in the details for the item. Once you have entered the required information, you can save the new item.
+
+![The New Item creation window](/images/travel-agent/setup-items-form.png)
+
+
+### General
+
+The General section contains the generic information that defines each item in the Travel Agent system. These fields establish the item's identity, financial tracking, and marketing integration.
+
+- **Item ID**: Unique identifier
+- **Product Name**: Human-readable name that describes the item (e.g., "5-Day Iceland Adventure")
+- **Brand**: Lookup field connecting the item to your brand, this affects how the emails are sent for example
+- **Account Code**: Links the item to general ledger accounts for financial reporting
+- **MailChimp Tag**: Used for email campaign segmentation and marketing automation
+
+<Callout type="tip">
+  **Best Practice**: Maintain consistency in naming conventions across all general fields to ensure easy maintenance and clear system navigation.
+</Callout>
+
+### Website Booking Options
+
+This section configures the booking form behavior for the item on the website. These settings control how customers interact with the booking process and what information is collected.
+
+- **Max Travelers**: Sets the maximum number of travelers allowed in a single booking
+- **Show Header**: Controls whether header text is displayed on the booking form
+- **Show Prices**: Determines if pricing information is visible on website
+- **Show Status**: Displays availability status ("Few seats left", " Only *\{x\}* seats left ", "Sold Out") if enabled
+- **Reg. Passport**: Require registering passport information during booking (Passport number, Sex, Issue Date, Expiration Date, Birthday) if enabled
+- **Reg. Address**: Register address during booking if enabled
+- **Reg. SSN**: Requires Social Security Number to be registered during booking
+- **Lookup SSN**: Enables web serviced lookup for SSN for automatic population of name and address.
+- **Picture**: Stores URL for picture to displays on booking form - if empty then there will be no picture shown.
+
+### Website Appearance Settings
+
+ This section configures how the travel package appears on sales web pages (like WordPress) and controls display of availability information to visitors.
+
+- **Destination**: Sets the destination associated with this item
+- **Term Destination**: Configures destination taxonomy terms for sales web page, if left empty then the value is defaulted to the one defined in Destination
+- **Term Experience**: Sets experience type classification for filtering in sales web page (like WordPress)
+- **Description (excerpt)**: Brief description that appears on gallery listings and search results for travel packages post (on sales website). Can be changed for individual package customization.
+- **Design Post Id**: Links to specific WordPress post that will be used as a template for the item
+- **X Seats Left**: Threshold number for displaying "seats left" notification on the booking form
+- **Few Seats Left**: The threshold that triggers "few seats left" notification. So if you set this to 5, it will show "Few Seats Left" when there are 5 or fewer seats available
+
+</Step>
+</Steps>
+
+
+# Related Resources
+
+<Cards>
+  <Card
+    href="./brands"
+    title="Brands"
+    description="Learn how to manage travel agency brands."
+  />
+  <Card
+    href="./destinations"
+    title="Destinations"
+    description="How to set up and use destinations in Travel Agent."
+  />
+</Cards>
+
+---
+
+<Callout type="info">
+  **Need help?** If you encounter any issues or have questions, please refer to our [FAQ](./faq) or [contact support](mailto:support@example.com).
+</Callout>

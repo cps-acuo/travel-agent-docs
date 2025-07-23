@@ -1,0 +1,56 @@
+---
+title: Travel Bookings
+description: The Travel Bookings page provides an overview of all bookings made for travel packages.
+icon: CalendarPlus
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+<Steps>
+<Step>
+## Navigating to the Travel Bookings Page
+
+Click on the **Travel Bookings** link in the sidebar to access the Travel Bookings page. This page displays a list of all travel bookings made in the system, allowing you to manage existing bookings.
+
+
+To view or edit a booking, click on it from the bookings list. This will open the booking details page, where you can update information across various tabs.
+
+</Step>
+<Step>
+
+
+## Editing an existing Travel Booking
+
+To view or edit a booking, click on it from the bookings list. This will open the travel booking form, where you can edit and update the details.
+
+
+You can also see which travelers are associated with the booking and the payments that have been made or are due for the booking.
+
+There are a number of fields that are always filled in when a booking is created, such as:
+- **Booking**: The unique identifier for the booking.
+- **Package**: The travel package associated with the booking.
+- **Reference**: A reference number for the booking.
+- **Traveler payer**: The traveler who is responsible for the payment of the booking.
+
+There are also some useful fields that just give you information about the booking, such as:
+- **Email Status**: Indicates whether the booking confirmation email has been sent.
+- **EmailSent**: The date and time when the booking confirmation email was sent.
+- **No of travelers**: The number of travelers in the booking.
+- **Sales Amount**: The total price of the booking.
+- **Payments**: The total amount paid for the booking.
+- **Balance**: The remaining balance due for the booking.
+- **Claims**: The total amount claimed for the booking.
+- **Booking Notes**: Any notes or comments related to the booking.
+
+In the Payments section, you can view all payments made towards the booking. You can view the payment details [here in the payment claims](./payment-claims).
+But usually these would include information about the payment method, amount, date of payment, etc.
+You can also add new payments directly from the booking page by clicking on the **New Travel Booking Claim** button above the payments grid.
+
+</Step>
+<Step>
+## Creating a new Travel Booking
+
+To create a new booking, you typically start from the **[Journal](./journal)**.
+
+</Step>
+</Steps>

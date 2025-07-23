@@ -16,9 +16,9 @@ This project is a documentation website built with FumaDocs, a Next.js-based doc
 ## Directory Structure
 
 - `content/docs`: Contains the MDX files for the documentation.
-  - `travel-agent/`: Documentation for the Travel Agent product.
-  - `travel-agent-wordpress/`: Documentation for the Travel Agent WordPress product.
-  - `ta-bookingform/`: Documentation for the TA BookingForm product.
+  - `travel-agent/`: Documentation for the Travel Agent Operations product.
+  - `travel-agent-wordpress/`: Documentation for the Travel Agent WordPress Plugin product.
+  - `travel-agent-web-bookings/`: Documentation for the Travel Agent Web Bookings product.
 - `src/app`: Contains the Next.js application code.
 - `src/mdx-components.tsx`: Defines custom MDX components.
 
@@ -26,30 +26,6 @@ This project is a documentation website built with FumaDocs, a Next.js-based doc
 
 When writing commit messages, please adhere to the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/). This helps to maintain a clear and descriptive commit history.
 
-## Example Page Structure
-
-```mdx
----
-title: Example Page
-description: This is an example page.
----
-import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
-
-
-<InlineTOC />
-
-# Example Page
-
-This is the main content of the page.
-
-## Section 1
-
-Content for section 1.
-
-## Section 2
-
-Content for section 2.
-```
 
 ## External Documentation
 

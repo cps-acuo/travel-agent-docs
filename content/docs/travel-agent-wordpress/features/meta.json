@@ -1,7 +1,6 @@
 {
     "title" : "Features",
     "pages" : [
-        "index",
         "auto-package-sync",
         "auto-post-creation",
         "cust-booking-button",
