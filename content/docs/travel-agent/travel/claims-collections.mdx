@@ -1,12 +1,10 @@
 ---
 title: Claims Collections
-description: Manage claims collections in the Travel Agent product.
+description: Manage all claims related to travel bookings.
 icon: WalletCards
 ---
 
 import { Step, Steps } from 'fumadocs-ui/components/steps';
-
-# Att. PLACEHOLDER CONTENT, Todo: fix content.
 
 <Steps>
 <Step>
@@ -19,20 +17,19 @@ Claims collections are used to track and manage financial claims related to trav
 
 To create a new claim, navigate to the Claims Collections section and click on the **New** button. You'll need to provide details such as:
 
-- Claim type (refund, compensation, collection)
-- Related booking or traveler
-- Amount
-- Due date
-- Status
+- **Description**: A brief description of the claim.
+- **Payment Method**: The method of payment, this is a lookup field that is used to select the payment method which are defined in the **[Payment Methods](/content/docs/travel-agent/data-management/payment-methods)** section.
+- **Package**: The travel package associated with the claim.
+- **ToDate**: The date by which the claim should be processed.
+- **Filename**: A field that allows you to upload any relevant documents or evidence related to the claim. Otherwise if empty, the system will generate a filename based on the date and time.
+- **Validation result**: The outcome of the claim validation process. Leave this field empty.
+
+After filling in at least the required fields, Payment Method and ToDate, click on **Save** to create the claim collection.
 </Step>
 <Step>
 ## Managing and Processing Claims
+# TODO
+Once claims are created, you can view ...
 
-Once claims are created, you can track their status and process them through to completion. This includes:
-
-- Updating status as the claim progresses
-- Adding notes and documentation
-- Processing payments or refunds
-- Closing the claim when resolved
 </Step>
 </Steps>
