@@ -19,7 +19,8 @@ The Travel Agent booking form includes built-in support for Icelandic social sec
 When enabled, the form will send the kennitala to your lookup API to retrieve user data:
 
 1. **Request**  
-   POST to `/api/kennitala-lookup/DDMMYYXXXX`.
+   POST to `/api/kennitala-lookup/DDMMYYXXXX`.  
+   Note: The API endpoint only accepts the `DDMMYYXXXX` format without a hyphen.
 2. **Response**  
 ```json
 {
