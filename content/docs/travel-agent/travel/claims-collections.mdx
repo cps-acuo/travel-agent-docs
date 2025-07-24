@@ -10,7 +10,7 @@ import { Step, Steps } from 'fumadocs-ui/components/steps';
 <Step>
 ## Understanding Claims Collections
 
-Claims collections are used to track and manage financial claims related to travel bookings. These may include refunds, compensation claims, or collection of outstanding payments from customers or partners.
+Claims collections are used to track and manage payment claims related to travel bookings.
 </Step>
 <Step>
 ## Creating a New Claim
@@ -24,12 +24,20 @@ To create a new claim, navigate to the Claims Collections section and click on t
 - **Filename**: A field that allows you to upload any relevant documents or evidence related to the claim. Otherwise if empty, the system will generate a filename based on the date and time.
 - **Validation result**: The outcome of the claim validation process. Leave this field empty.
 
-After filling in at least the required fields, Payment Method and ToDate, click on **Save** to create the claim collection.
+After filling in at least the required fields (Payment Method and ToDate), click on **Save** to create the claim collection.
 </Step>
 <Step>
-## Managing and Processing Claims
-# TODO
-Once claims are created, you can view ...
+## Managing the Claim Collection
+
+Once a claim collection is created, you can view the individual claims associated with it in the section bellow the collection details.
+
+But first, you need to Prepare the claims by pressing the **Prepare Claims** button in the command bar. This will validate the claims and prepare them for processing. 
+If there are any validation errors, they will be displayed in the **Validation result** field. You can then correct the issues and re-prepare the claims.
+
+
+After preparing the claims, you can proceed to process them by clicking on the **Post Collection Journal** button, next to the **Prepare Claims** button.
+This will process the claims and send emails to the customers associated with the claims, notifying them of the claim status and any actions required.
+
 
 </Step>
 </Steps>
