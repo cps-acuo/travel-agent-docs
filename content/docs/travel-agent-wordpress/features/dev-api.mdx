@@ -1,6 +1,6 @@
 ---
 title: "Developer API"
-description: "Overview of the Travel Agent plugin's REST API for external integrations."
+description: "Comprehensive overview of the Travel Agent plugin’s REST API, enabling secure and flexible external integrations for managing travel packages and bookings."
 ---
 
 
@@ -10,15 +10,18 @@ The Developer API lets you manage travel packages and bookings programmatically.
 
 All requests require an API key header:
 
+
+All API requests require an API key to be included in the request header:
+
 ```http
 X-API-Key: YOUR_API_KEY_HERE
-```  
-Ensure you keep this key secure—never expose it in client-side code.
+```
+Ensure that your API key is kept secure and never exposed in client-side code.
 
 ## Rate Limiting
 
-- **100 requests/minute** per API key.
-- Returns a `429 Too Many Requests` header when exceeded.
+- Each API key is limited to **100 requests per minute**.
+- If this limit is exceeded, the API will return a `429 Too Many Requests` response header.
 
 ## Endpoints
 
@@ -29,7 +32,9 @@ Ensure you keep this key secure—never expose it in client-side code.
 ```http
 POST /travel-agent/v1/add-package
 Content-Type: application/json
-```  
+```
+Use this endpoint to add a new travel package to the system.
+
 **Request Body** (JSON)
 ```json
 {
@@ -67,8 +72,9 @@ Content-Type: application/json
 ```http
 PUT /travel-agent/v1/update-package
 Content-Type: application/json
-```  
-Use the **same request body** as **Add Package**.  
+```
+Use the same request body as **Add Package** to update an existing package.
+
 **Response** (200 OK)
 ```json
 {
@@ -82,8 +88,9 @@ Use the **same request body** as **Add Package**.
 
 ```http
 GET /travel-agent/v1/find-package/<GUID>
-```  
-Retrieves a package by its unique GUID.  
+```
+Retrieve a package by its unique GUID.
+
 **Response** (200 OK)
 ```json
 { /* package object */ }
@@ -93,8 +100,9 @@ Retrieves a package by its unique GUID.
 
 ```http
 DELETE /travel-agent/v1/delete-package/<GUID>
-```  
-Deletes the specified package.  
+```
+Delete the specified package from the system.
+
 **Response** (200 OK)
 ```json
 {
@@ -109,8 +117,9 @@ Deletes the specified package.
 
 ```http
 POST /travel-agent/v1/refresh-post/<GUID>
-```  
-Compares package data to its WordPress post and updates the post if needed.  
+```
+Compare package data to its associated WordPress post and update the post if necessary.
+
 **Response** (200 OK)
 ```json
 {

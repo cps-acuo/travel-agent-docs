@@ -1,50 +1,54 @@
 ---
 title: "Automatic Post Creation"
-description: "How the Travel Agent plugin auto-creates and updates WordPress posts for your packages."
+description: "Automatically create and update WordPress posts for travel packages, ensuring your site always reflects the latest offerings without manual intervention."
 ---
 
-The Travel Agent plugin hooks into package **create** and **update** events and ensures each package has a corresponding WordPress post—no manual steps needed.
+The Travel Agent plugin automatically monitors package creation and update events, ensuring that each travel package is consistently represented by a corresponding WordPress post. This process is fully automated, eliminating the need for manual intervention.
+
 
 ## 1. Trigger Points
 
-- **On New Package**  
-  Runs when a package is first added in the Power APP platform.
-- **On Package Update**  
-  Runs if a package is updated and no post exists yet.
+- **On New Package:**  
+  Triggered when a new package is added in the backend (like Acuo travel Agent Operations).
+- **On Package Update:**  
+  Triggered when a package is updated and no corresponding post exists.
 
-## 2. Creation Logic
 
-### 2.1 Template-Based
-1. Check for a **template_id** on the package (e.g. `42`).
-2. If present, clone that template’s structure (title, shortcodes, layout) into a new post.
+## 2. Post Creation Logic
 
-### 2.2 Fallback
-1. If no template is set, generate a **blank post**:
-   - **Title**: Uses the package title.
-   - **Content**: Includes the excerpt, images, and a default booking button element.
-   
+### 2.1 Template-Based Creation
+1. The plugin checks for a **template_id** associated with the package (e.g., `42`).
+2. If a template is present, the structure—including title, shortcodes, and layout—is cloned into a new WordPress post.
+
+### 2.2 Fallback Creation
+1. If no template is specified, the plugin generates a **blank post**:
+   - **Title:** Uses the package title.
+   - **Content:** Includes the excerpt, images, and a default booking button element.
+
 ## 3. Post Updating
 
-If an existing package is updated **and** its post was deleted or missing, the same logic above re-runs to recreate it automatically.
+If an existing package is updated and its corresponding post has been deleted or is missing, the creation logic above is automatically re-executed to restore the post.
+
 
 ## 4. Post Details
 
-- **Content**  
-  Title, excerpt, featured image(s), and booking button (if your template includes it).  
-- **Status**  
-  - Maps “Available” packages to `published`.  
-  - Maps “Draft” or “Pending” packages to `draft`.  
-- **Visibility**  
-  Controlled by the **Post Status** setting in `Settings → Travel Agent`.  
-- **Taxonomies**  
-  Automatically assigns:
-  - **Destination** (from package destination)  
-  - **Experience** (from package experience)  
-  - **Period** (from departure date)  
+- **Content:**  
+  Each post includes the package title, excerpt, featured image(s), and a booking button (if specified in the template).
+- **Status:**  
+  - Packages marked as “Available” are set to `published`.
+  - Packages marked as “Draft” or “Pending” are set to `draft`.
+- **Visibility:**  
+  Determined by the **Post Status** setting in `Settings → Travel Agent`.
+- **Taxonomies:**  
+  The plugin automatically assigns the following taxonomies:
+  - **Destination:** Based on the package destination.
+  - **Experience:** Based on the package experience.
+  - **Period:** Based on the departure date.
+
 
 ## 5. Configuration
 
-In **Settings → Travel Agent**:
+To enable and configure automatic post creation, navigate to **Settings → Travel Agent** in your WordPress admin dashboard:
 
-- **Integration Status** → `Live` (turns this feature on)  
-- **Post Status** → Minimum status required for frontend visibility (default: `published`)
+- **Integration Status:** Set to `Live` to activate automatic post creation and updates.
+- **Post Status:** Specify the minimum post status required for frontend visibility (default: `published`).
