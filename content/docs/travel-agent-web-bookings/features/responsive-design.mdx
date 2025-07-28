@@ -1,6 +1,6 @@
 ---
 title: "Responsive Design"
-description: "Learn how the Travel Agent booking form adapts seamlessly across devices using Next.js, React, and shadcn styling."
+description: "Overview of the Travel Agent booking form’s responsive design, ensuring seamless usability and visual consistency across all devices through Next.js, React, and shadcn/ui components."
 ---
 
 The Travel Agent booking form is built with **Next.js** and **React**, using **shadcn/ui** components and Tailwind CSS under the hood. It follows a **mobile-first**, fluid layout strategy to ensure optimal usability on all screen sizes.
@@ -8,19 +8,19 @@ The Travel Agent booking form is built with **Next.js** and **React**, using **s
 ## Core Principles
 
 - **Mobile-First Breakpoints**  
-  Styles begin at the smallest viewport and scale up. Default breakpoints mirror Tailwind’s (`sm`, `md`, `lg`, `xl`).
+  Styles are defined using a mobile-first approach, beginning at the smallest viewport and scaling up. Default breakpoints align with Tailwind’s conventions (`sm`, `md`, `lg`, `xl`).
 - **Flexible Containers**  
-  The `<BookingForm>` component uses CSS Grid and Flexbox to reorganize fields and buttons based on available width.
+  The `<BookingForm>` component utilizes CSS Grid and Flexbox to dynamically reorganize fields and buttons based on the available width.
 - **Fluid Typography & Spacing**  
-  Uses relative units (`rem`, `%`) and CSS variables for padding, margins, and font sizes—adjusting automatically between breakpoints.
+  Relative units (`rem`, `%`) and CSS variables are used for padding, margins, and font sizes, ensuring automatic adjustment across breakpoints.
 - **Iframe Responsiveness**  
-  The embedded form listens for container width changes (via `ResizeObserver`) and applies matching layout classes.
+  The embedded form detects container width changes using `ResizeObserver` and applies appropriate layout classes for optimal display.
 
 ## shadcn/UI Integration
 
-- **Utility-First**  
-  All components leverage Tailwind utility classes for responsive variants (e.g., `md:grid-cols-2`, `lg:px-8`).
+- **Utility-First Approach**  
+  All components leverage Tailwind utility classes to support responsive variants (e.g., `md:grid-cols-2`, `lg:px-8`).
 - **Configurable Tokens**  
-  Customize breakpoints or spacing scales by extending your Tailwind config and rebuilding the form bundle.
+  Breakpoints and spacing scales can be customized by extending your Tailwind configuration and rebuilding the form bundle.
 
-> For advanced layout options and style overrides, see the [Booking Form Styling Guide](/docs/travel-agent-web-bookings/configurations/stylings).
+> For advanced layout options and style overrides, refer to the [Booking Form Styling Guide](/docs/travel-agent-web-bookings/configurations/stylings).

@@ -3,41 +3,46 @@ title: "Multi-Language Support"
 description: "Learn about the multi-language features and localization capabilities of the Travel Agent booking form."
 ---
 
-The Travel Agent booking form web application offers built-in support for **Icelandic** and **English**, ensuring your users see content in their preferred language and format. All UI labels, messages, and data formatting (numbers, dates, currencies) adapt automatically according to the selected locale.
+
+The Travel Agent web bookings application provides multi-language support, currently offering built-in localization for **Icelandic** and **English**. This ensures users experience the interface, messages, and data formatting (including numbers, dates, and currencies) in their preferred language and regional format. All UI elements adapt automatically based on the selected locale.
+
+Additional languages will be supported in future releases, guided by market demand.
 
 ## Supported Locales
 
 - **English** (`en`)
 - **Icelandic** (`is`)
 
+
 ## Automatic Language Detection
 
 1. **Browser Settings**  
-   The form reads the user’s browser or device language preference and switches accordingly.
+   The booking form automatically detects and applies the user’s browser or device language preference.
 2. **URL Parameter**  
-   Append `bookingform.com/en/` or `bookingform.com/is/` to override detection.
+   Language selection can be explicitly set by appending `bookingform.com/en/` or `bookingform.com/is/` to the URL, overriding automatic detection.
+
 
 ## Localization Details
 
 ### UI Text & Labels
 
-- All form labels, button text, validation messages, and notifications are translated.
-- Localization files are managed as JSON dictionaries under `/locales/{lang}.json`.
+- All form labels, button text, validation messages, and notifications are fully translated for each supported language.
+- Localization files are managed as JSON dictionaries located under `/locales/{lang}.json`.
 
 ### Number Formatting
 
-- **English**: Uses comma as thousands separator and period as decimal (e.g. `1,234.56`).
-- **Icelandic**: Uses space as thousands separator and comma as decimal (e.g. `1 234,56`).
+- **English:** Uses a comma as the thousands separator and a period as the decimal separator (e.g., `1,234.56`).
+- **Icelandic:** Uses a space as the thousands separator and a comma as the decimal separator (e.g., `1 234,56`).
 
 ### Date & Time
 
-- **English**: `MM/DD/YYYY` or `MMMM D, YYYY` formats.
-- **Icelandic**: `DD.MM.YYYY` or `D. MMMM YYYY` formats.
+- **English:** Formats dates as `MM/DD/YYYY` or `MMMM D, YYYY`.
+- **Icelandic:** Formats dates as `DD.MM.YYYY` or `D. MMMM YYYY`.
 
 ### Currency
 
-- **English**: Prefix currency symbol (e.g. `$1,000.00`).
-- **Icelandic**: Suffix currency code (e.g. `1 000,00 ISK`).
+- **English:** Prefixes the currency symbol (e.g., `1,000.00`).
+- **Icelandic:** Suffixes the currency code (e.g., `1.000`).
 
 {/* ## Extending to New Languages
 
