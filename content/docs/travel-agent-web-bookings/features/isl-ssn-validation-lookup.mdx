@@ -1,0 +1,68 @@
+---
+title: "Icelandic Social Security Number Validation and Lookup"
+description: "Learn about the Icelandic Social Security Number validation and optional lookup features in the booking form."
+---
+
+The Travel Agent booking form includes built-in support for Icelandic social security numbers (kennitala). It validates format and checksum at entry time, and—if enabled—can call an external lookup endpoint to fetch the user’s name and address for a smoother booking flow.
+
+## Format Validation
+
+- **Pattern Check**  
+  The kennitala must match `DDMMYY-XXXX` or `DDMMYYXXXX` (6-digit date + 4-digit sequence).
+- **Checksum**  
+  The last digit is verified with the modulus-11 algorithm to ensure authenticity.
+- **Client Feedback**  
+  Invalid entries trigger an inline error message before submission.
+
+## Optional Lookup
+
+When enabled, the form will send the kennitala to your lookup API to retrieve user data:
+
+1. **Request**  
+   POST to `/api/kennitala-lookup/DDMMYYXXXX`.  
+   Note: The API endpoint only accepts the `DDMMYYXXXX` format without a hyphen.
+2. **Response**  
+```json
+{
+    "name": "Jón Jónsson",
+    "permanent_address": {
+        "street": {
+            "dative": "Lækjargata 2"
+        },
+        "postal_code": 101,
+        "town": {
+            "dative": "Reykjavík"
+        },
+        "country": {
+            "type": "country",
+            "code": "IS",
+            "name": {
+                "is": "Ísland",
+                "en": "Iceland"
+            }
+        }
+    },
+}
+```
+3. **Auto-Fill**  
+   The form populates name and address fields, reducing user effort.
+
+:::note
+Enable lookup only if you have a valid data source and sufficient quota.
+:::
+
+## Lookup Pricing Template
+
+Use this template to communicate your lookup API pricing plan based on call volume:
+
+| Tier           | Monthly Calls Included | Overage Rate (per call) |
+| -------------- | ---------------------- | ----------------------- |
+| **Basic**      | 1,000                  | $0.10                   |
+| **Professional** | 10,000                | $0.08                   |
+| **Enterprise** | 50,000                 | $0.05                   |
+
+Adjust the tiers, limits, and rates to fit your service model.
+
+---
+
+{/* _For detailed integration steps, see [Lookup Endpoint Configuration](/docs/travel-agent-web-bookings/configurations/lookup)._ */}

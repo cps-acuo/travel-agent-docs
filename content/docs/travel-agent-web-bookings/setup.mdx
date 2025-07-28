@@ -1,10 +1,48 @@
 ---
-title: Setup
-description: Instructions on setting up the TA BookingForm product.
+title: "Setup"
+description: "A setup guide to the Travel Agent booking form."
 ---
 
-# Setup
+> ⚠️ **Notice:** This guide is a work in progress and may change. Please check back for the latest instructions.
 
-This section provides instructions on how to set up the TA BookingForm product.
+Follow these steps to deploy and configure the Travel Agent booking form web application.
 
-# 
+## 1. Create & Configure Azure Web App
+
+1. **Create a new Web App** in Azure and select **Docker Container** as the publishing option.
+2. **Set the Container Registry** to your Azure Container Registry and specify the image name as `tabookingform`.
+
+## 2. Define Environment Variables
+
+In your Web App settings, add the following environment variables:
+
+| Variable                    | Description                                                                                                        | Example                                                      |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------ |
+| **AZURE_CLIENT_ID**         | Client ID of the App Registration for the Travel Agent Operations Power Apps app.                                  | `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`                      |
+| **AZURE_CLIENT_SECRET**     | Client Secret from the same App Registration.                                                                      | `your-client-secret-value`                                   |
+| **AZURE_TENANT_ID**         | Tenant ID of your Azure Active Directory.                                                                          | `yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy`                      |
+| **BASE_API_URL**            | Base URL for the Power Apps Operations API.                                                                        | `https://org.crm4.dynamics.com/api/data/v9.2`               |
+| **POWER_APPS_SCOPE**        | OAuth scope URI for the Power Apps API (append `/.default`).                                                       | `https://org.crm4.dynamics.com/.default`                    |
+| **TOKEN_REFRESH_INTERVAL_MINS** | Interval (in minutes) for refreshing OAuth tokens.                                                             | `15`                                                         |
+
+## 3. Deploy & Verify
+
+1. **Deploy** your container to the Web App.
+2. **Restart** the Web App once deployment completes.
+3. **Test the root URL:**
+   - Visiting `https://<your-webapp>.azurewebsites.net/` should load the default Azure page.
+4. **Test the booking form endpoint:**
+   - Append `/booking-form` (e.g. `https://<your-webapp>.azurewebsites.net/booking-form`)—you should see a **404 Page Not Found**.
+
+## 4. Load a Package Form
+
+To render a specific package booking form:
+
+1. Obtain an **External ID** for a published package in the Travel Agent Operations Power Apps platform.
+2. Navigate to:
+   ```
+   https://<your-webapp>.azurewebsites.net/booking-form/<external_id>
+   ```
+3. The booking form for that package should load (assuming package settings are configured correctly).
+
+> 🔍 For more information on package setup and data requirements, see the [Data Management guide](/docs/travel-agent/data-management).

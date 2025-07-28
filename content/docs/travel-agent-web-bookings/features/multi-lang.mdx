@@ -1,0 +1,50 @@
+---
+title: "Multi-Language Support"
+description: "Learn about the multi-language features and localization capabilities of the Travel Agent booking form."
+---
+
+The Travel Agent booking form web application offers built-in support for **Icelandic** and **English**, ensuring your users see content in their preferred language and format. All UI labels, messages, and data formatting (numbers, dates, currencies) adapt automatically according to the selected locale.
+
+## Supported Locales
+
+- **English** (`en`)
+- **Icelandic** (`is`)
+
+## Automatic Language Detection
+
+1. **Browser Settings**  
+   The form reads the user’s browser or device language preference and switches accordingly.
+2. **URL Parameter**  
+   Append `bookingform.com/en/` or `bookingform.com/is/` to override detection.
+
+## Localization Details
+
+### UI Text & Labels
+
+- All form labels, button text, validation messages, and notifications are translated.
+- Localization files are managed as JSON dictionaries under `/locales/{lang}.json`.
+
+### Number Formatting
+
+- **English**: Uses comma as thousands separator and period as decimal (e.g. `1,234.56`).
+- **Icelandic**: Uses space as thousands separator and comma as decimal (e.g. `1 234,56`).
+
+### Date & Time
+
+- **English**: `MM/DD/YYYY` or `MMMM D, YYYY` formats.
+- **Icelandic**: `DD.MM.YYYY` or `D. MMMM YYYY` formats.
+
+### Currency
+
+- **English**: Prefix currency symbol (e.g. `$1,000.00`).
+- **Icelandic**: Suffix currency code (e.g. `1 000,00 ISK`).
+
+{/* ## Extending to New Languages
+
+1. **Create** a new JSON file in `/locales/{lang}.json` with translated key/value pairs.  
+2. **Add** the locale code to the plugin’s configuration under **Settings → Travel Agent → Booking Form**.  
+3. **Test** both automatic detection and manual switching to ensure full coverage.
+
+--- */}
+
+{/* _Read more about localization and theming in the [Developer Guide](/docs/developer-guide/localization)._ */}
