@@ -5,37 +5,39 @@ description: "Navigate to `Settings → Travel Agent` in your WordPress dashboar
 
 
 
+
 ### 2.1 Expandable Iframe
 
-Configure these options for the expandable iframe.
+Configure the following settings to enable and optimize the expandable iframe functionality within your WordPress site.
 
 #### 🔒 Required
 
->- **Default Iframe URL**  
-    Set this option to the URL where your [Booking Form](/docs/travel-agent-web-bookings) is hosted.
+> - **Default Iframe URL**  
+>   Specify the URL where your [Booking Form](/docs/travel-agent-web-bookings) is hosted. This ensures the iframe displays the correct booking interface to users.
+
 
 ### 2.2 API & Filter
 
-Configure these options for the API and filter settings.
+Adjust the following API and filter settings to ensure secure integration and accurate data synchronization between your WordPress site and the Acuo Travel Agent platform.
 
 #### 🔒 Required
 
->- **API Key**  
-  Generate a key for the [Travel Agent Operations](/docs/travel-agent) platform in `API Key` field under the relevant brand. 
-  Store it securely—shown only once.  
->- **Package Post Type**  
-  Custom post type for travel packages (e.g. `travel_package`).
->- **Destination Taxonomy**  
-  Taxonomy for package destinations (e.g. `destination`).
->- **Experience Taxonomy**  
-  Taxonomy for experience categories (e.g. `experience`).
->- **Period Taxonomy**  
-  Taxonomy for time periods (e.g. `period`).
->- **Integration Status**  
-  Switch between:
-  >>- `Migration`: Disable new post creation (for data migration).
-  >>- `Live`: Enable real-time post creation.
+> - **API Key**  
+>   Generate an API key for the [Travel Agent Operations](/docs/travel-agent) platform in the `API Key` field under the appropriate brand. Store this key securely, as it will only be displayed once for security purposes.
+> - **Package Post Type**  
+>   Define the custom post type used for travel packages (e.g., `travel_package`). This enables the plugin to correctly identify and manage package content.
+> - **Destination Taxonomy**  
+>   Specify the taxonomy used for package destinations (e.g., `destination`). This allows for accurate categorization and filtering of travel packages by destination.
+> - **Experience Taxonomy**  
+>   Specify the taxonomy used for experience categories (e.g., `experience`). This supports enhanced filtering and organization of packages by experience type.
+> - **Period Taxonomy**  
+>   Specify the taxonomy used for time periods (e.g., `period`). This enables time-based categorization and search functionality.
+> - **Integration Status**  
+>   Select the appropriate integration mode:
+>   >> - `Migration`: Disables new post creation, intended for data migration scenarios.
+>   >> - `Live`: Enables real-time post creation and updates, ensuring your site reflects the latest package availability.
+
 
 ## 3. Save Settings
 
-Click **Save Changes** at the bottom of the page to apply your configuration.
+After configuring all required options, click **Save Changes** at the bottom of the page to apply and activate your settings. Your configuration will take effect immediately.
