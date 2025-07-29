@@ -13,7 +13,7 @@ import { Card, Cards } from 'fumadocs-ui/components/card';
 <Step>
 ## Navigating to the Payment Methods Page
 
-The main **Payment Methods** page provides an overview of all existing payment methods within the system. From here, you can view, manage, and create new payment methods.
+The main Payment Methods page provides an overview of existing payment methods. From here, you can view, manage, and create new payment methods.
 
 ![The Payment Methods page in Travel Agent](/images/travel-agent/setup-payment-method-view.png)
 </Step>
@@ -36,16 +36,18 @@ When creating a new payment method, you need to select a type. The available typ
 
 In the **New Payment Method** window, you need to fill in the details for the payment method. For most payment methods, you will provide a name and select the type. 
 
-Under the **Credit Card Service** section, there are additional fields for configuring the **Straumur Payment Link** integration:
-- **Access URL**: The main endpoint for Straumur Services.
+Under the Credit Card Service section, there are additional fields for configuration for integration services:
+- **Access URL**: The main endpoint for Payment Services.(like Straumur)
 - **Returning URL**: The URL where the customer will be redirected after finishing the payment process.
 - **Session Lifetime**: How long the payment session will remain active. If the session expires, a new one will be created with the same lifetime.
-- **Theme Key**: Used to customize the appearance of the payment page which is configured at the **Straumur** merchant portal.
+- **Theme Key**: Used to customize the appearance of the payment page which is configured at payment merchant portal (like Straumur).
 
 You can also configure the **Payment Email URL**, which is the link that appears in the email body. The Power App will concatenate an ID to this link (usually you would put the Booking Form checkout endpoint).
 
 The **Email Template** is a rich text field that allows you to customize the email content. You can use the following placeholders, which must be typed exactly as shown, to insert dynamic information:
+- `<PayerName>`
 - `<PackageName>`
+- `<DueDate>`
 - `<Amount>`
 - `<Link>`
 - `<Companysign>`
