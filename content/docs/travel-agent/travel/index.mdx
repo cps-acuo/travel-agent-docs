@@ -1,30 +1,31 @@
 ---
 title: Travel
-description: Overview of the Travel section in the Travel Agent product.
+description: Travel section in the Travel Agent Operation.
 ---
 
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Card, Cards } from 'fumadocs-ui/components/card';
 
-# Att. PLACEHOLDER CONTENT, Todo: fix content.
+# Att. PLACEHOLDER CONTENT.
 
 
 <Steps>
 <Step>
-## Understanding the Travel Section
-
-The Travel section is the core of the Travel Agent product, where you manage all aspects of travel bookings, packages, and traveler information. This section provides tools to handle every step of the travel booking and management process.
+## Purpose 
+The Travel section encompasses all daily operations for managing packages and bookings.
 </Step>
 <Step>
 ## Key Components
 
 The Travel section includes several key components:
 
-- **Travel Packages**: Create and manage travel packages that customers can book
-- **Travel Bookings**: Track individual bookings made by travelers
-- **Travelers**: Manage traveler profiles and information
-- **Journal**: Record communications and notes related to bookings and travelers
-- **Reports**: Generate various reports for flights, hotels, passports, and more
+- **Travel Packages**: Create and manage packages that can be booked
+- **Travel Bookings**: Track individual bookings made by travelers, a booking consists of 
+  - **Traveler**: The individuals that are included in the booking
+  - **Payments**: How will the booking be paid for
+- **Travelers**: Manage information on individual travelers across different bookings
+- **Journal**: Create travel journals with travelers that are purchasing a package. Once the journal is posted, bookings are created.
+- **Reports**: Generate reports for flights, hotels, passports, and more
 - **Payments**: Handle all financial aspects of travel bookings
 </Step>
 <Step>
@@ -47,21 +48,21 @@ Each section provides detailed instructions for efficient travel management oper
   <Card
     href="./travel-packages"
     title="Travel Packages"
-    description="Create and manage travel packages for your customers"
+    description="Create and manage packages that are beeing offered for sale"
   />
   <Card
     href="./travel-bookings"
     title="Travel Bookings"
-    description="Manage all aspects of customer bookings"
+    description="Manage all aspects of package bookings"
   />
   <Card
     href="./travelers"
     title="Travelers"
-    description="Maintain profiles for all your travelers"
+    description="Manage information on individuals that are part of your booking"
   />
   <Card
     href="./journal"
     title="Journal"
-    description="Keep a record of all communications and notes"
+    description="Register package sales and individuals that are included in the booking"
   />
 </Cards>

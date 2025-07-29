@@ -1,6 +1,6 @@
 ---
 title: Travel Packages
-description: Travel Packages is the first screen you see when opening the application. It provides an overview of all travel packages, allowing you to manage and create new ones.
+description: The Travel Packages page is the initial screen displayed upon opening the application. It provides a comprehensive overview of all travel packages, enabling you to manage, create, and edit packages, as well as configure web booking layouts and view booking information.
 icon: TicketsPlane
 ---
 
@@ -15,51 +15,67 @@ import { Card, Cards } from 'fumadocs-ui/components/card';
 ![The Travel Packages page in Travel Agent](/images/travel-agent/travel-packages-active-view-1.png)
 </Step>
 <Step>
-## Creating a new Travel Package
-To create a new travel package, click on the **New** button in the command bar. But sometimes you might want to create a travel package from an existing one. In that case, you have to select an existing travel package (you can also select multiple) and click on the **Clone** button in the command bar.
+
+
+## Creating a New Travel Package
+To create a new travel package, click the **New** button in the command bar. To create a package based on an existing one, select the desired package(s) and click the **Clone** button in the command bar.
 ![The Clone button in the command bar](/images/travel-agent/travel-packages-clone-feature.png)
 
-### What are Travel Packages?
-Travel packages are collections of the basic information needed to create trips, view bookings and manage the itinerary.
-These Travel Package inherit information from the **Items** which are templates for Travel Packages. The **Item** field and the **Name** field are the only required fields when creating a new travel package.
+### Packages definition
+Packages are collections of information required to create bookable events, view bookings, and manage itineraries.
+A package is essentially a sellable instance of an Item, with the **Item** field controlling certain characteristics. The **Item** and **Name** fields are mandatory when creating a new package.
 - **Name**: A descriptive name for the travel package.
 - **Item**: The related item, for setting up defaults for the package.
 
-### There are 7 sections in the travel package, which are:
-- **General**: This section contains general information about the travel package, such as its name, item, dates, nights, days, max rooms, max PAX etc.
-- **Package Payment Plan**: This section allows you to set up a payment plan for the travel package.
-- **Package Actions**: This section allows you to add actions to the travel package, such as flights, hotels, tours, food & beverage etc.
-- **Website Booking options**: Here you can set up the connection to the Booking Form to your website, if it is installed. Such as the image, the minimum amount of PAX that can be booked together, if you allow waitlisting and some disclaimers.
-- **Website Appearance Settings**: This sections allows you to control how the travel package appears on your sales website, such as it's display name, the excerpt that appears on the travel package and if it should update automatically with information about unbooked pax. 
-- **Package Prices**: This section allows you define the prices for the travel package, such the price for single occupancy (SGL), double occupancy (DBL), triple occupancy (TRP) and so on.
-- **Addon Prices**: This section allows you to define the prices for addons that can be added to the travel package.
+### Main Sections of the Package Form
+- **General**: Contains essential information such as name, item, dates, number of nights and days, maximum rooms, and maximum PAX (passengers).
+- **Website Booking Options**: Configure web booking details, including package image, minimum PAX per booking, waitlist options, and disclaimers.
+- **Website Appearance Settings**: Control how the package appears on your sales website, including display name, excerpt, and automatic updates for availability.
+- **Package Payment Plan**: Set up a payment plan, which may include one or more lines (e.g., deposit and final payment).
+    - **Due Dates**: Specify due dates for each payment line.
+    - **Type**:
+        - **Amount Per Traveler**: A fixed amount due at booking.
+        - **Percent**: A percentage of the total amount due on the specified date.
+        - **Remainder**: The remaining balance, such as the final payment.
+    - **Amount**: Enter the amount or percentage for each payment line.
+    - **Payment Method**: Specify how each payment should be collected (modifiable later).
+- **Package Actions**: Set up actions related to the package, such as flights, hotels, tours, and food & beverage.
+    - **Action Name**: Automatically generated if not specified.
+    - **Information**: Details about the action, such as description, hotel name, flight number, etc.
+    - **Action**: Lookup from Action in setup, allowing grouping by vendor (e.g., airline or hotel chain).
+    - **Auto Register**: If enabled, all existing travelers are automatically registered to new actions when posting a travel journal.
+- **Package Prices**: Define pricing for the package, including single (SGL), double (DBL), triple (TRP) occupancy, and more.
+- **Addon Prices**: Define prices for optional addons. If a package action is assigned, it is automatically linked to travelers who select the addon.
 
-#### Some of the more important fields are:
-- **Status**: The status of the travel package, which can be set to **Preparation**, **In Sales**, **Closed for Sales** or **Travel**.
+
+#### Key Fields
+- **Status**: Indicates the current status of the travel package: **Preparation**, **In Sales**, **Closed for Sales**, or **Travel**.
 - **From Date**: The start date of the travel package.
 - **To Date**: The end date of the travel package.
-- **Nights**: The number of nights included in the travel package.
-- **Days**: The number of days included in the travel package.
-- **Max Rooms**: The maximum number of rooms available for the travel package.
-- **Max PAX**: The maximum number of passengers allowed for the travel package. 
-- **UnBooked Pax**: The PAX available.
-- **Comment**: Internal comments for the travel package.
+- **Nights**: Total number of nights included.
+- **Days**: Total number of days included.
+- **Max Rooms**: Maximum number of rooms available.
+- **Max PAX**: Maximum number of passengers allowed.
+- **Unbooked PAX**: Number of available PAX.
+- **Comment**: Internal notes or comments related to the travel package.
 
 </Step>
 
 <Step>
-## Editing a Travel Package and viewing related information
-To edit a travel package, click on the **Name** of the travel package in the list view. This will open the travel package details page, where you can edit the fields mentioned above.
+
+## Editing a Travel Package and Viewing Related Information
+To edit a travel package, click the **Name** of the desired package in the list view. This opens the travel package details page, where you can modify any of the fields described above.
 
 ![The Travel Package edit form](/images/travel-agent/travel-package-edit-form.png)
 ![The Travel Package edit form 2](/images/travel-agent/travel-package-edit-form-2.png)
-There are also several tabs in the travel package edit form that allow you to view related information, these tabs just show various views of related data and entities but you can also view customized relations on the far right tab, they are:
-- **Travelers**: Shows all travelers that are on this travel package.
-- **Bookings**: Shows all bookings that have been made for the travel package.
-- **Payments/Claims**: Shows all payments and claims that have been made for the travel package.
-- **Traveler Actions**: Shows all actions that have been registered on the travel package.
-- **Passport**: This is the same view as travelers, but it also displays names in a passport friendly format and other passport information.
-- **Wait-list**: This tab shows all travelers that are on the wait-list for the travel package if it has been enabled.
+
+The travel package edit form includes several tabs for viewing related information. These tabs provide access to various data and entities associated with the package, as well as customized relations in the far-right tab:
+- **Travelers**: Displays all travelers assigned to the package.
+- **Bookings**: Lists all bookings sold for the package.
+- **Payments/Claims**: Shows all payments/claims associated with the package.
+- **Traveler Actions**: Lists all actions registered for the package.
+- **Passport**: Similar to the Travelers tab, but also displays names in a passport-friendly format and additional passport information.
+- **Wait-list**: Displays all travelers on the wait-list for the package.
 </Step>
 
 </Steps>

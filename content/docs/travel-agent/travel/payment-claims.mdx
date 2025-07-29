@@ -1,51 +1,41 @@
 ---
 title: Payment Claims
-description: Information about payment claims in the Travel Agent product.
+description: Overview of payment claims management in Travel Agent Operations, including creation, tracking, and processing of claims related to travel bookings.
 icon: Receipt
 ---
 
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 
-# Att. PLACEHOLDER CONTENT, Todo: fix content.
+
+## Payment Claims Overview
 
 <Steps>
 <Step>
-## Understanding Payment Claims
+### What Are Payment Claims?
 
-Payment claims are requests for payment related to travel bookings. These may include:
+Payment claims are formal requests for payment associated with travel bookings. These claims are generated based on the payment schedule defined for each package and can also be created manually as needed.
 
-- Claims to suppliers for services rendered
-- Claims to insurance companies for covered incidents
-- Claims to partners for commission payments
-- Claims to customers for outstanding balances
-
-The payment claims module helps track and manage these financial requests throughout their lifecycle.
 </Step>
 <Step>
-## Creating a New Payment Claim
+### Creating a New Payment Claim
 
-To create a new payment claim:
+Payment claims are typically generated automatically during the booking process, in accordance with the package’s payment setup. However, claims can also be created manually for any booking, provided they are linked to a specific booking record.
 
-1. Navigate to the Payment Claims section
-2. Click on **New Claim** to start a new claim
-3. Select the claim type and related booking
-4. Enter the claim amount and supporting details
-5. Upload any required documentation
-6. Assign the claim to a responsible staff member
-7. Save the claim
+To create a manual payment claim:
+1. Navigate to the relevant booking.
+2. Select the payment/claims section and click **New Claim**.
+3. Enter the claim amount and any supporting details as required.
 
-The system will generate a unique claim reference number for tracking purposes.
+The system will generate a unique claim reference number for tracking and management purposes.
 </Step>
 <Step>
-## Managing the Claims Process
+### Managing the Claims Process
 
-Once claims are created, you can:
+Once payment claims are created, you can:
 
 - Track the status of each claim through its lifecycle
 - Send automated reminders for outstanding claims
-- Document communications related to the claim
-- Record partial payments against the claim
-- Generate reports on outstanding and resolved claims
-- Close claims once they are fully processed
+- Generate queries on outstanding claims
+- Mark as claims paid
 </Step>
 </Steps>
