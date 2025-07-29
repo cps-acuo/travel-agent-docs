@@ -1,20 +1,23 @@
 ---
 title: "Setup"
-description: "A setup guide to the Travel Agent booking form."
+description: "Acuo Travel Agent Web Booking application setup."
 ---
+> ⚠️ **Notice:** This guide is a work in progress and may be updated. Please check back regularly for the latest instructions.
 
-> ⚠️ **Notice:** This guide is a work in progress and may change. Please check back for the latest instructions.
 
-Follow these steps to deploy and configure the Travel Agent booking form web application.
+The Acuo Travel Agent Web Booking application is delivered as a SaaS solution. Upon ordering, the application is deployed and connected to the designated backend system. If the backend is Travel Agent Operations, deployment is performed on Azure App Service.
+
+For Azure App Service deployments, Docker containers are utilized to facilitate efficient management and scalability. This guide provides step-by-step instructions for setting up the application, configuring environment variables, and deploying.
+
 
 ## 1. Create & Configure Azure Web App
 
-1. **Create a new Web App** in Azure and select **Docker Container** as the publishing option.
+1. **Create a new Web App** in Azure, selecting **Docker Container** as the publishing option.
 2. **Set the Container Registry** to your Azure Container Registry and specify the image name as `tabookingform`.
 
 ## 2. Define Environment Variables
 
-In your Web App settings, add the following environment variables:
+In your Web App settings, configure the following environment variables:
 
 | Variable                    | Description                                                                                                        | Example                                                      |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -25,6 +28,7 @@ In your Web App settings, add the following environment variables:
 | **POWER_APPS_SCOPE**        | OAuth scope URI for the Power Apps API (append `/.default`).                                                       | `https://org.crm4.dynamics.com/.default`                    |
 | **TOKEN_REFRESH_INTERVAL_MINS** | Interval (in minutes) for refreshing OAuth tokens.                                                             | `15`                                                         |
 
+
 ## 3. Deploy & Verify
 
 1. **Deploy** your container to the Web App.
@@ -32,7 +36,7 @@ In your Web App settings, add the following environment variables:
 3. **Test the root URL:**
    - Visiting `https://<your-webapp>.azurewebsites.net/` should load the default Azure page.
 4. **Test the booking form endpoint:**
-   - Append `/booking-form` (e.g. `https://<your-webapp>.azurewebsites.net/booking-form`)—you should see a **404 Page Not Found**.
+   - Append `/booking-form` to the URL (e.g., `https://<your-webapp>.azurewebsites.net/booking-form`). You should see a **404 Page Not Found** message, indicating the endpoint is not yet configured.
 
 ## 4. Load a Package Form
 
@@ -43,6 +47,6 @@ To render a specific package booking form:
    ```
    https://<your-webapp>.azurewebsites.net/booking-form/<external_id>
    ```
-3. The booking form for that package should load (assuming package settings are configured correctly).
+3. The Web Booking application for that package should load (assuming package settings are configured correctly).
 
 > 🔍 For more information on package setup and data requirements, see the [Data Management guide](/docs/travel-agent/data-management).

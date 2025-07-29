@@ -1,12 +1,13 @@
 ---
 title: Payment Claims
-description: Information about payment claims in the Travel Agent product.
+description: Overview of payment claims management in Travel Agent Operations, including creation, tracking, and processing of claims related to travel bookings.
 icon: Receipt
 ---
 
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 
-# Att. PLACEHOLDER CONTENT, Todo: fix content.
+
+## Payment Claims Overview
 
 <Steps>
 <Step>
@@ -14,30 +15,31 @@ import { Step, Steps } from 'fumadocs-ui/components/steps';
 
 To access all Payment Claims, click on the **Payment Claims** link in the sidebar. This section allows you to manage all claims.
 
+## What Are Payment Claims?
+
+Payment claims are formal requests for payment associated with travel bookings. These claims are generated based on the payment schedule defined for each package and can also be created manually as needed.
+
 </Step>
 <Step>
 ## Creating a New Payment Claim
 
-To create a new payment claim, click on the **New** button in the command bar. The required fields for creating a claim are:
-- **Travel Package**: The travel package associated with the claim.
-- **Package Order**: The order number for the travel package.
+Payment claims are also generated automatically during the booking process, in accordance with the package's payment setup. However, claims can also be created manually for any booking, provided they are linked to a specific booking record.
 
-Which are found in the top left corner of the claim form, next to the owner field.
+To create a manual payment claim:
+1. Navigate to the relevant booking.
+2. Select the payment/claims section and click **New Claim**.
+3. Enter the claim amount and any supporting details as required.
 
-
-
-The system will generate a unique claim reference number for tracking purposes.
+The system will generate a unique claim reference number for tracking and management purposes.
 </Step>
 <Step>
 ## Managing the Claims Process
 
-Once claims are created, you can:
+Once payment claims are created, you can:
 
 - Track the status of each claim through its lifecycle
 - Send automated reminders for outstanding claims
-- Document communications related to the claim
-- Record partial payments against the claim
-- Generate reports on outstanding and resolved claims
-- Close claims once they are fully processed
+- Generate queries on outstanding claims
+- Mark as claims paid
 </Step>
 </Steps>

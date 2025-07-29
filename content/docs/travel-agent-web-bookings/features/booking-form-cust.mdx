@@ -1,21 +1,24 @@
 ---
 title: "Booking Form Customization"
-description: "Brief overview of styling options for the Travel Agent booking form."
+description: "Overview of advanced styling and customization options available for the Travel Agent Web bookings, enabling seamless integration with your site's branding."
 ---
 
-Easily tailor the look-and-feel of your embedded booking form by sending style instructions from your page to the iframe via `postMessage`. The booking form supports:
+
+You can fully customize the appearance of your embedded booking form by sending style instructions from your page to the iframe using the `postMessage` API. This approach enables seamless alignment with your site's branding and user experience requirements.
+
+### Supported Customizations
 
 - **Color Overrides**  
-  Customize primary, secondary, accent colors, and more to match your theme.
+  Adjust primary, secondary, accent, and other color variables to match your site's theme.
 - **Border Radius**  
-  Control corner rounding on cards, inputs, and buttons for a cohesive design.
+  Control the corner radius of cards, input fields, and buttons for a cohesive and modern design.
 
 :::note
-For a full list of style properties and configuration examples, see the [Booking Form Styling Guide](/docs/travel-agent-web-bookings/configurations/styling).
+For a comprehensive list of supported style properties and configuration examples, refer to the [Booking Form Styling Guide](/docs/travel-agent-web-bookings/configurations/styling).
 :::
 
 ```js
-// Example: change primary color and border radius
+// Example: Change primary color and border radius
 document.getElementById('booking-iframe').contentWindow.postMessage(
   {
     type: 'TA_STYLE_UPDATE',
@@ -28,5 +31,4 @@ document.getElementById('booking-iframe').contentWindow.postMessage(
 );
 ```
 
-Add these calls on your page before or after rendering the `<iframe>` to apply custom styles instantly.
-This works out of the box with the [Travel Agent WordPress plugin](/docs/travel-agent-wordpress), or any custom implementation that uses the booking form iframe.
+You can invoke these calls on your page either before or after rendering the `<iframe>` to apply custom styles instantly. This functionality is fully supported by the [Travel Agent WordPress plugin](/docs/travel-agent-wordpress) and any custom implementation utilizing the booking form iframe.
