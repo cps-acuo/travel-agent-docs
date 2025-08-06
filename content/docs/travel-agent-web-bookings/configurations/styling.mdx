@@ -3,9 +3,9 @@ title: "Styling"
 description: "A styling configuration guide to the Travel Agent booking form."
 ---
 
-<div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', alignItems: 'center' }}>
-  <img src="/images/travel-agent-web-bookings/booking-form-kolumbus.png" alt="Booking Form Kolumbus" style={{ maxWidth: '48%', borderRadius: '8px' }} />
-  <img src="/images/travel-agent-web-bookings/booking-form-fseb.png" alt="Booking Form FSEB" style={{ maxWidth: '48%', borderRadius: '8px' }} />
+<div className="flex gap-4 justify-center items-center">
+  <img src="/images/travel-agent-web-bookings/booking-form-kolumbus.png" alt="Booking Form Kolumbus" className="max-w-[48%] rounded-lg" />
+  <img src="/images/travel-agent-web-bookings/booking-form-fseb.png" alt="Booking Form FSEB" className="max-w-[48%] rounded-lg" />
 </div>
 
 Easily adjust the look of your embedded booking form by sending simple `postMessage` instructions from your page to the iframe. Use the following style keys to match your branding:
