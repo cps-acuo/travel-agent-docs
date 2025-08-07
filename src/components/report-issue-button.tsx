@@ -18,7 +18,7 @@ export function ReportIssueButton({
   }, []);
 
   const createIssueUrl = () => {
-    const baseUrl = 'https://github.com/cps-acuo/travel-agent-docs/issues/new';
+    const baseUrl = GITHUB_ISSUE_BASE_URL;
     const template = 'documentation-issue.yml';
     
     const params = new URLSearchParams({
