@@ -18,6 +18,12 @@ body:
     validations:
       required: true
 
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Page URL:** This issue was reported from the page above.
+        
   - type: dropdown
     id: issue-type
     attributes:
@@ -48,3 +54,5 @@ body:
       description: Drag and drop images here to help explain the issue
     validations:
       required: false
+
+
