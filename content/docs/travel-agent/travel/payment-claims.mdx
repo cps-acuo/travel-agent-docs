@@ -20,14 +20,16 @@ Payment claims are formal requests for payment associated with travel bookings. 
 <Step>
 ## Creating a New Payment Claim
 
-Payment claims are also generated automatically during the booking process, in accordance with the package's payment setup. However, claims can also be created manually for any booking, provided they are linked to a specific booking record.
+Payment claims are generated automatically during the booking process, in accordance with the package's payment setup. However, claims can also be created manually for any booking, provided they are linked to a specific booking record.
 
 To create a manual payment claim:
 1. Navigate to the relevant booking.
 2. Select the payment/claims section and click **New Claim**.
 3. Enter the claim amount and any supporting details as required.
+4. Click **Save** to create the claim then information will be copied from last claim to speed up the process.
+5. On create all relevant information in the booking and package will be updated.
 
-The system will generate a unique claim reference number for tracking and management purposes.
+The system will generate a unique reference number for tracking.
 </Step>
 <Step>
 ## Managing the Claims Process
@@ -38,5 +40,13 @@ Once payment claims are created, you can:
 - Send automated reminders for outstanding claims
 - Generate queries on outstanding claims
 - Mark as claims paid
+- For marking claims as paid you only need to check on paid, then data paid and amount paid will automatically be updated.
+</Step>
+<Step>
+Claims that have been sent out for collection (process depends on the payment method) but need to be adjusted then, like changing payment-mehod, due date, payer information,
+then ***ClaimId***, ***Claim Send Date*** needs cleared and then the claim transaction is able to be resent with new process or information for collection.  
+
+If the users likes to Multi-select lines for clearing these claims they can do so by selecting the relevant claims (many) and then assigning the text "N/A" to the filed ClaimId and press save. 
+This will clear the ClaimId and Claim Send Date fields, allowing for a fresh start on the claim process.
 </Step>
 </Steps>
