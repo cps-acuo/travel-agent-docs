@@ -1,0 +1,62 @@
+---
+title: Issue Reporting Demo
+description: Demo page showing how to report issues in the Travel Agent documentation
+---
+
+# Issue Reporting Demo
+
+This page demonstrates the various ways users can report issues with the Travel Agent documentation.
+
+## Report Issue Button Locations
+
+### 1. Navigation Bar
+There's a compact issue button in the top navigation bar that's available on every page.
+
+### 2. Sidebar Footer
+Check out the sidebar on the left - there's an issue reporting section at the bottom.
+
+### 3. Inline Components
+You can also add issue buttons directly in your documentation content:
+
+<ReportIssue variant="default" />
+
+Or use the compact version:
+
+<ReportIssue variant="compact" />
+
+### 4. Page Footer
+There's also a page footer component that can be added to specific pages:
+
+<PageFooter />
+
+## How It Works
+
+When you click any of these issue buttons:
+
+1. **Automatic URL Detection**: The current page URL is automatically captured
+2. **Pre-filled Form**: Opens GitHub with a pre-filled issue form
+3. **Template Structure**: Uses our custom issue template with relevant fields
+4. **Context Preservation**: Includes the page URL and space for screenshots
+
+## Issue Template Features
+
+Our GitHub issue template includes:
+- Page URL (automatically filled)
+- Issue type dropdown
+- Product selection (Travel Agent Operations, WordPress Plugin, Web Bookings)
+- Detailed description field
+- Screenshots upload area
+- Browser/device information
+- Code of conduct acceptance
+
+## Usage in MDX
+
+To add issue buttons to your documentation pages, simply use:
+
+```mdx
+<ReportIssue variant="default" />
+<ReportIssue variant="compact" />
+<PageFooter />
+```
+
+The buttons will automatically detect the current page and generate the appropriate GitHub issue URL.
