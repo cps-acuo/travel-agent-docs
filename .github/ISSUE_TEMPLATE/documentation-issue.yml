@@ -1,0 +1,58 @@
+name: 📖 Documentation Issue
+description: Report an issue with the documentation
+title: "[DOCS]: "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping us improve our documentation! 
+        Please describe the issue you found.
+
+  - type: input
+    id: page-url
+    attributes:
+      label: Page URL
+      description: Which page has the issue?
+      placeholder: "https://your-docs-site.com/docs/..."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Page URL:** This issue was reported from the page above.
+        
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: What's wrong?
+      options:
+        - "Information is incorrect"
+        - "Information is missing"
+        - "Broken link or image"
+        - "Typo or formatting"
+        - "Code example doesn't work"
+        - "Other"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Tell us more about the issue
+      placeholder: "What did you expect to find? What actually happened?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots (Optional)
+      description: Drag and drop images here to help explain the issue
+    validations:
+      required: false
+
+
