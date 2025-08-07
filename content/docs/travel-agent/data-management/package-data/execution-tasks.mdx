@@ -1,6 +1,41 @@
 ---
 title: Execution Tasks
-description: Overview of various processes and tasks that run in the background of the Travel Agent Power App.
+description: Various processes and tasks the system offers that run in the background of the Travel Agent Operation.
 icon: Terminal
 ---
+
+To start execution of a task a new task is created in the Acuo Travel Agent Operations Execution Task table. This task is then processed by the system, once **Task status** is gets the value **Exectue**.  A task may involve running scripts, performing data updates, or executing other necessary operations.
+the table has the following fields:
+ 
+| Field                    | Description                                                      |
+|--------------------------|------------------------------------------------------------------|
+| Id                       | unique identifier for the task.                                  |
+| Status                    | Active, Inactive          |
+| Stage                | ***Status=Active:*** Pending, Exectue, Faild / ***Status=Inactive:*** Complete  |
+| Task Type       | See table below                       |
+| Priority        | Task Priority higher number higher Priority              |
+| Parent Task               | Parent task that generate this task.                         |
+
+
+The Acuo Travel Agent Operations ***Execution Task tables***
+Here is a list of various processes and tasks for running in background of the Travel Agent Operation. These tasks are essential for maintaining the functionality and performance of the system.
+
+
+
+ 
+| Task Name                | Description                                                      | Usages                        |
+|:--------------------------:|------------------------------------------------------------------|-----------------------------------------|
+|MailChimp update  | Updates MailChimp marketing list with information latest customer and booking information. | automated marketing list in MailChimp |
+| Create Journal for Travelers| this is creating journal for selected travalers form power app grid     | Internal useage to support functionalities|
+| Clone Package  | Operation that clones selected packages to save time in creating new package  | Internal useage to support functionalities|
+|Update addon price for all travelers| Updates the addon prices for all travelers in the system| Used to synchronization during update       |
+|Update Bookings Rollups| Update booking Rollups from bookings from travelers and claims| Used to synchronization during update   |
+|Update Package Rollups| Update booking Rollups for packages| Used to synchronization during update   |
+|Split Name First and Last| Split name into first name and last name where they are empty| Used during update or data migration  |   
+|Prepare Claims| Create Payment journal lines from journal header parameters | Internal useage to support functionalities |
+|Post Collection Journal| Post Payment journal and update relvanted infomation based on payment mode of the journal | Internal useage |
+|Payments From Straumur| Fetch and update payments from one of our servcie providers | Internal usage |
+|Journal Posting| Post Travel Journal and update relvante infomation (Traveler,Booking, Claims, Addons, Actions) | Internal usage |
+|Journal Validate| Validate Travel Journal and update error messages | Internal usage |
+|Update Claims information| Update claims information based on data from payer | Internal usage |
 

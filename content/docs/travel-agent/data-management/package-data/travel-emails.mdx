@@ -1,6 +1,39 @@
 ---
 title: Travel Emails
-description: Overview of the booking emails sent and received within the Travel Agent Power App.
+description: Overview emails sent out of Travel Agent Operations.
 icon: MailCheck
 ---
+The system has automated emails sending based on different triggers. These emails are sent to the users, travelers, claim payers.
 
+The following table show the different emails that are sent out of the system:
+
+| Email Type                | Description                                                      | Trigger                        |
+|:--------------------------:|------------------------------------------------------------------|-----------------------------------------|
+| Booking received       | Sent to users upon booking received (or waitlisting)             | Booking created                   |
+| Payment Request            | Sent to travelers for processing payments links  (using template in payment mode)    | Payment Journal posted                 |
+| Booking Confirmation      | Sent to travelers (and user group) when their booking is confirmed                | Booking confirmed                 |
+| Other  | Manually created email                 | Ad hoc |
+
+The files in the email are the following:
+
+| field name                | Description                                                      |
+|---------------------------|------------------------------------------------------------------|
+| From                       | emails address with from the email is send                      |
+| To                         | emails address with to the email is send                        |
+| Subject                    | Subject line of the email                                       |
+| Status                    | Status of the email (Active:unprocessed/Inactive: processed)                        |
+| Stage                      | **Active:** Ready to Send, Error, Edit before Sending / **Inactive:** Sent            |
+| cc                         | email addresses to be cc'd on the email                       |
+| Email Source             | Process created the email                                     |
+| Claim                     | if the emails was create by payment request                  |
+| Updated By                | User that updated the email                                   |
+| Body                      | Body of the email                                           |
+
+
+The process of sending the email is as follows:
+
+- The email is generated based on a specific trigger and stage is set to "Ready to Send" or "Edit before sending". 
+If the email has "Ready to Send" stage, it will be processed for sending with a flow.  But if the email has "Edit before sending" stage, it will be processed by user to edit the email body and 
+then the user needs to change the status to "Ready to Send" for it to be sent out.  
+
+- All emails with the status "Ready to Send" will be processed for sending. If the action is successful, the email's status is updated to "Stage:Sent and Status:Inactive". If there is an error during sending, the status is updated to "Stage:Error and Status:Active".
