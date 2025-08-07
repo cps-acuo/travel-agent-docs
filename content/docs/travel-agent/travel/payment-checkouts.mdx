@@ -1,43 +1,57 @@
 ---
 title: Payment Checkouts
-description: Manage payment checkouts in the Travel Agent product.
+description: The Payment Checkouts section provides a comprehensive view of all checkout requests that have been made in the Travel Agent system. This area is designed primarily as a monitoring tool, allowing you to track and review payment activities.
 icon: ShoppingCart
 ---
 
+import { Callout } from 'fumadocs-ui/components/callout';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Card, Cards } from 'fumadocs-ui/components/card';
 
-# Att. PLACEHOLDER CONTENT, Todo: fix content.
+<Callout type="info">
+  The Payment Checkouts section is intended for viewing existing checkout data. Users are not expected to create new records in this section.
+</Callout>
+## Navigating to the Payment Checkouts Page
 
-<Steps>
-<Step>
-## Understanding Payment Checkouts
+To access the Payment Checkouts page, click on the **Payment Checkouts** link in the sidebar. This will take you to the main overview of all checkout requests.
 
-Payment checkouts are the final step in the booking process where travelers complete their payment for travel packages. This module helps travel agents process payments securely and efficiently, whether they're handling deposits, full payments, or installment plans.
-</Step>
-<Step>
-## Processing a Payment Checkout
+## How Checkout Requests Work
 
-To process a payment checkout:
+Checkout requests are generated automatically through the following process:
 
-1. Navigate to the booking you want to process a payment for
-2. Click on the **Process Payment** button
-3. Select the payment method (credit card, bank transfer, cash, etc.)
-4. Enter the payment amount
-5. Complete any payment gateway requirements
-6. Confirm the transaction
+1. A payment claim email is sent to the customer
+2. The customer clicks the payment link in their email
+3. They are redirected to an external checkout page (configured in the [Payment Methods](/docs/travel-agent/setup/payment-methods) section)
+4. The system records this checkout attempt
 
-The system will process the payment and update the booking's payment status accordingly.
-</Step>
-<Step>
-## Managing Payment Records
+Each time a customer clicks the payment link to start the checkout process, the system logs the attempt and updates the relevant information.
 
-After processing payments, you can:
+## Checkout Request Information
 
-- Generate receipts and invoices for customers
-- View payment history for any booking
-- Process refunds when necessary
-- Reconcile payments with your accounting system
-- Set up automated payment reminders for upcoming installments
-- Generate financial reports for completed transactions
-</Step>
-</Steps>
+Each checkout request entry contains the following information:
+
+- **Created On**: The date and time when the checkout request was initially created
+- **Tries Counter**: The number of times the customer has attempted to pay by clicking the link in the email
+- **Is Paid**: Whether the payment has been successfully completed
+- **Payment Order ID**: The packageorderpayment identifier associated with this checkout
+- **Payer**: The person or entity making the payment
+- **Travel Package**: The specific travel package for which payment is being made
+- **Payment Method**: The selected method of payment for this transaction
+
+## Understanding the Tries Counter
+
+The Tries Counter is an important metric that shows how many times a customer has attempted to initiate the payment process. Each time a customer clicks the payment link in their email, this counter increases. This can help you identify:
+
+- Customers who may be having difficulties completing the payment process
+- Potential technical issues with the payment gateway
+- Payment claims that may need follow-up attention
+
+# Related Resources
+
+<Cards>
+  <Card
+    href="../setup/payment-methods"
+    title="Payment Methods Configuration"
+    description="Learn how to set up the payment methods and configure checkout pages."
+  />
+</Cards>
