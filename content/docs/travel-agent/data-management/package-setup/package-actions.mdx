@@ -1,12 +1,21 @@
 ---
 title: Package Actions
-description: Here you manage actions that together form the package itinerary. Especially information regarding reports for travel providers like hotels, flights, and tour guides.
+description: Manage actions that that build of Package itinerary.
 icon: MapPinned
 ---
 
+Travel actions manage the activities of a package or the composition of the trip, particularly the information that the system can provide. 
+For example, reports for travel suppliers such as Hotel Report and Flight List.
 
-Ferðaaðgerðir halda utan um aðgerðir pakkaferðar eða samsetningu ferðarinnar.  Og þá sérstaklega upplýsingar sem kerfið getur veitt.  T.d. skýrslur fyrir ferðabirgja eins og hótel, flug og fararstjóra.  
-Þær upplýsingar sem hægt er að skrá um hverja aðgerð (Action) innan ferðar eru:
+The information that can be recorded for each action within a package includes:
 
-From Date, Action, Information, Auto Registered.
+- Package Actions: Set up actions related to the package, such as flights, hotels, tours, and food & beverage.
+- Action Name: Automatically generated if not specified.
+- Information: Details about the action, such as description, hotel name, flight number, etc.
+- Action: Lookup from Action in setup, allowing grouping by vendor (e.g., airline or hotel chain).
+- Auto Register: If enabled, all existing travelers are automatically registered to new actions when posting a travel journal.
+- From Date: The date when the action takes place.
 
+
+A new action for a package needs to be created from the travel package form.  And if a new action is added to a package 
+and the Auto Register is enabled then the existing travelers on the package will not be automatically registered to the new action.
