@@ -6,9 +6,6 @@ description: Travel section in the Travel Agent Operation.
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Card, Cards } from 'fumadocs-ui/components/card';
 
-# Att. PLACEHOLDER CONTENT.
-
-
 <Steps>
 <Step>
 ## Purpose 
@@ -20,23 +17,24 @@ The Travel section encompasses all daily operations for managing packages and bo
 The Travel section includes several key components:
 
 - **Travel Packages**: Create and manage packages that can be booked
-- **Travel Bookings**: Track individual bookings made by travelers, a booking consists of 
-  - **Traveler**: The individuals that are included in the booking
-  - **Payments**: How will the booking be paid for
-- **Travelers**: Manage information on individual travelers across different bookings
-- **Journal**: Create travel journals with travelers that are purchasing a package. Once the journal is posted, bookings are created.
+- **Travel Bookings**: Track individual bookings, a booking consists of 
+  - **Traveler**: The individuals that are included in the booking along with the prices and activities 
+  - **Traveler addons**: An addon that traveler might have added to their bookings
+  - **Payments**: Payment schedule for each booking
+- **Travelers**: Manage information on individual travelers across packages and bookings
+- **Journal**: Create travel journals with travelers that have been sold a package. Once the journal is posted, bookings are created.
 - **Reports**: Generate reports for flights, hotels, passports, and more
-- **Payments**: Handle all financial aspects of travel bookings
+- **Payments**: Handle all payment and collection of funds for bookings
 </Step>
 <Step>
 ## Getting Started
 
 To get started with the Travel section:
 
-1. First, explore the [Travel Packages](./travel-packages) to understand how to create and manage travel offerings
-2. Learn how to manage [Travel Bookings](./travel-bookings) for your customers
+1. [Travel Packages](./travel-packages) to understand how to create and manage travel offerings
+2. [Travel Bookings](./travel-bookings) for your customers
 3. Familiarize yourself with the [Travelers](./travelers) management system
-4. Understand how the [Journal](./journal) helps you keep track of all communications
+4. Understand how the [Journal](./journal) is used to add travelers to a package and create bookings.
 
 Each section provides detailed instructions for efficient travel management operations.
 </Step>
