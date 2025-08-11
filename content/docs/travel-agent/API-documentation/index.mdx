@@ -8,3 +8,155 @@ It provides robust support for front-end publishing automation and facilitates e
 As a **Model-Driven Power App**, the application harnesses Microsoft’s platform capabilities to help clients integrate **AI** and 
 automation features. These tools enable travel businesses to **optimize** workflows, **enhance** operational efficiency, and 
 deliver **exceptional**  service experiences.
+
+## Authentication
+All API requests use OAuth 2.0 for authentication. You must obtain an access token to interact with the API.
+
+Token needs to be refreshed periodically to maintain access.
+
+Ensure that your access token is kept secure and never exposed in client-side code.
+
+## Endpoints
+
+### 1. Package Management
+
+#### Get Package Info
+
+```http
+GET /cps_get_package_info(cps_external_package_id=<EXTERNAL PACKAGE ID>)
+Content-Type: application/json
+```
+Use this endpoint to retrieve detailed information about a specific travel package.
+
+**Response** (200 OK)
+```json
+{
+  "cps_travel_package_status": {
+    "Name": "string",
+    "ItemDescription": "string",
+    "WebMessageboxTop": "string",
+    "WebMessageboxLower": "string",
+    "BookingMessageTextHelp": "string",
+    "Image": "string",
+    "StartDate": "DateTime",
+    "EndDate": "DateTime",
+    "MaxTravelersInBooking": "number",
+    "MinTravelersInBooking": "number",
+    "RegisterPassport": "boolean",
+    "RegisterSSN": "boolean",
+    "lookupSSN": "boolean",
+    "ShowSalesStatus": "boolean",
+    "ShowPrices": "boolean",
+    "RegisterAddress": "boolean",
+    "BookingFormShowHeader": "boolean",
+    "PackagePrices": [
+      {
+        "PerCount": "number",
+        "PricePP": "number",
+        "Name": "string"
+      }
+    ],
+    "PriceAddons": [
+      {
+        "AddonGuid": "string",
+        "Description": "string",
+        "TrvAbrv": "string",
+        "PricePP": "number",
+        "Oneofgroup": "string",
+        "ActivityType": "number"
+      }
+    ]
+  }
+}
+```
+
+#### Get Package Status
+
+```http
+GET /cps_get_package_status(cps_external_package_id=<EXTERNAL PACKAGE ID>)
+Content-Type: application/json
+```
+
+**Response** (200 OK)
+```json
+{
+  "cps_travel_package_status": 
+  {
+    "UnBookedPax": "number",
+    "Waitinglist": "boolean",
+    "PackageStage": "number",
+    "FewSeatsAvailable": "boolean",
+    "AllowWaitlistRegistration": "boolean"
+  }
+}
+```
+
+#### Post Booking
+
+```http
+POST /cps_put_travelerbooking
+Content-Type: application/json
+```
+Post a new travel package to the system.
+
+**Request Body** (JSON)
+```json
+{
+  "WaitlistRegistration": "boolean",
+  "exteralref": "string",
+  "Travelers": [
+      {
+        "Payer": "boolean",
+        "Name_First": "string",
+        "Name_Last": "string",
+        "SSN": "string",
+        "Email": "string",
+        "Phonenumber": "string",
+        "Address1": "string",
+        "Address2": "string",
+        "Addresszip": "string",
+        "City": "string",
+        "Country": "string",
+        "Passportnumber": "string",
+        "PassportIssueDate": "YYYY-MM-DD",
+        "Passportexpiration": "YYYY-MM-DD",
+        "PassportSex": "string",
+        "Comment": "string",
+        "PriceAddons": [
+          "string"
+        ]
+    }
+  ]
+}
+```  
+
+**Response** (200 OK)
+```json
+{
+  Same as the request body 
+  ...
+  "trvpackjournalheaderid": "string",
+  "Header_validationErrors": "string",
+  "Header_ErrorCode": {
+    "type": "number",
+    "message": "string"
+  },
+  "Travelers": [
+      {
+        Same as the request body 
+        ...
+        "Togethercode": "string",
+        "salesprice": "number",
+        "Passportbirthday": "YYYY-MM-DD",
+        "Passportissuecountry": "string",
+        "Passportnationality": "string",
+        "ValidationResult": "string",
+        "Trvpackjournallineid": "string",
+        "Coupon": "string",
+        "PriceAddons": [
+          "string"
+        ]
+    }
+  ]
+}
+```
