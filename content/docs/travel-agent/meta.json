@@ -3,7 +3,8 @@
   "pages": [
     "travel",
     "data-management",
-    "setup"
+    "setup",
+    "API-documentation"
   ],
   "root": true
 }
