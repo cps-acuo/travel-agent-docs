@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
+import { usePathname } from 'next/navigation';
 
 interface ReportIssueButtonProps {
   className?: string;
@@ -11,21 +12,24 @@ export function ReportIssueButton({
   className = '', 
   variant = 'default' 
 }: ReportIssueButtonProps) {
-  const [currentUrl, setCurrentUrl] = useState('');
+  const pathname = usePathname();
+  const [origin, setOrigin] = useState('');
 
   useEffect(() => {
-    setCurrentUrl(window.location.href);
+    setOrigin(window.location.origin);
   }, []);
+
+  const fullUrl = useMemo(() => (origin && pathname ? `${origin}${pathname}` : ''), [origin, pathname]);
 
   const createIssueUrl = () => {
     const baseUrl = 'https://github.com/cps-acuo/travel-agent-docs/issues/new';
     const template = 'documentation-issue.yml';
     
-    const params = new URLSearchParams({
-      template,
-      'page-url': currentUrl,
-      title: `[DOCS]: Documentation Issue`,
-    });
+  const params = new URLSearchParams();
+  params.set('template', template);
+  if (fullUrl) params.set('page-url', fullUrl);
+  params.set('title', `[DOCS]: Issue on ${pathname}`);
+  if (fullUrl) params.set('body', `Page URL: ${fullUrl}\n\nDescribe the issue here...`);
 
     return `${baseUrl}?${params.toString()}`;
   };
@@ -35,7 +39,7 @@ export function ReportIssueButton({
     : `inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors border border-border rounded-lg hover:bg-accent ${className}`;
 
   // Don't render the link until we have the URL to prevent hydration issues
-  if (!currentUrl) {
+  if (!origin) {
     return (
       <div className={buttonClasses}>
         🐛 {variant === 'default' ? 'Report Issue' : 'Issue'} ↗

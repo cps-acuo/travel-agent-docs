@@ -2,7 +2,7 @@
 
 import { Bug, ExternalLink } from 'lucide-react';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import type { ReactElement } from 'react';
 
 interface ReportIssueButtonProps {
@@ -14,22 +14,31 @@ export function ReportIssueButtonWithIcons({
   className = '', 
   variant = 'default' 
 }: ReportIssueButtonProps): ReactElement {
+  // We rely on usePathname so the path updates on client-side navigation even if
+  // this component (inside a layout) does not remount. We only capture origin once.
   const pathname = usePathname();
-  const [currentUrl, setCurrentUrl] = useState('');
+  const [origin, setOrigin] = useState('');
 
   useEffect(() => {
-    setCurrentUrl(window.location.href);
+    // window.location.origin is stable; capture after mount to avoid SSR mismatch.
+    setOrigin(window.location.origin);
   }, []);
+  
+  const fullUrl = useMemo(() => (origin && pathname ? `${origin}${pathname}` : ''), [origin, pathname]);
   
   const createIssueUrl = () => {
     const baseUrl = 'https://github.com/cps-acuo/travel-agent-docs/issues/new';
     const template = 'documentation-issue.yml';
     
-    const params = new URLSearchParams({
-      template,
-      'page-url': currentUrl,
-      title: `[DOCS]: Issue on ${pathname}`,
-    });
+    const params = new URLSearchParams();
+    params.set('template', template);
+    if (fullUrl) params.set('page-url', fullUrl);
+    // Put the path in the issue title (kept concise) and rely on the form field for full URL.
+    params.set('title', `[DOCS]: Issue on ${pathname}`);
+    // Fallback: if for any reason the form template is not applied, prefill description.
+    if (fullUrl) {
+      params.set('body', `Page URL: ${fullUrl}\n\nDescribe the issue here...`);
+    }
 
     return `${baseUrl}?${params.toString()}`;
   };
@@ -41,7 +50,7 @@ export function ReportIssueButtonWithIcons({
   const iconSize = variant === 'compact' ? 14 : 16;
 
   // Don't render the link until we have the URL to prevent hydration issues
-  if (!currentUrl) {
+  if (!origin) {
     return (
       <div className={buttonClasses}>
         <Bug size={iconSize} />
