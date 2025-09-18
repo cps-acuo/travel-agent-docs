@@ -3,8 +3,8 @@
     "pages" : [
         "auto-package-sync",
         "auto-post-creation",
-        "cust-booking-button",
-        "cust-booking-form",
+        "booking-form-element",
+        "packages-table",
         "dev-api",
         "filter-grid"
     ]
