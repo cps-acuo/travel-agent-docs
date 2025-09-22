@@ -3,9 +3,11 @@ title: "Styling"
 description: "A styling configuration guide to the Travel Agent booking form."
 ---
 
-<div className="flex gap-4 justify-center items-center">
-  <img src="/images/travel-agent-web-bookings/booking-form-kolumbus.png" alt="Booking Form Kolumbus" className="max-w-[48%] rounded-lg" />
-  <img src="/images/travel-agent-web-bookings/booking-form-fseb.png" alt="Booking Form FSEB" className="max-w-[48%] rounded-lg" />
+import { ImageZoom } from 'fumadocs-ui/components/image-zoom';
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-center items-center">
+  <ImageZoom src={"/images/travel-agent-web-bookings/booking-form-kolumbus.png"} width={1200} height={800} alt='Booking Form Kolumbus'/>
+  <ImageZoom src={"/images/travel-agent-web-bookings/booking-form-fseb.png"} width={1200} height={800} alt='Booking Form FSEB'/>
 </div>
 
 Easily adjust the look of your embedded booking form by sending simple `postMessage` instructions from your page to the iframe. Use the following style keys to match your branding:
