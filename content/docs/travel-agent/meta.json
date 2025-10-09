@@ -6,5 +6,6 @@
     "setup",
     "API-documentation"
   ],
+  "icon": "Plane",
   "root": true
 }

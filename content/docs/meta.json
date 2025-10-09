@@ -4,8 +4,6 @@
         "index",
         "travel-agent",
         "travel-agent-wordpress",
-        "travel-agent-web-bookings",
-        "issue-reporting-demo",
-        "reusable-doc-template"
+        "travel-agent-web-bookings"
     ]
 }
