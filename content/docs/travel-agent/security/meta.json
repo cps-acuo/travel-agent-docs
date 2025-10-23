@@ -1,0 +1,8 @@
+{
+    "title": "Security",
+    "pages": [
+        "security-roles",
+        "column-security-profiles"
+    ],
+    "icon": "Shield"
+}

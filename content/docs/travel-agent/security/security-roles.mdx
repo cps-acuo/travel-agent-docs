@@ -1,0 +1,135 @@
+---
+title: Security Roles
+description: Understanding the security roles in Travel Agent Operations and their permissions.
+icon: UserCog
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+## Overview
+
+Security roles in Travel Agent Operations define what users can access and what actions they can perform within the application. There are three primary security roles, each designed for different levels of access and responsibility.
+
+## Available Security Roles
+
+### Travel Agent Admin
+
+The **Travel Agent Admin** role provides full administrative access to the Travel Agent Operations application.
+
+**Key Permissions:**
+- Full access to all features and data
+- Create, read, update, and delete permissions across all entities
+- Configure system settings and parameters
+- Manage user access and security profiles
+- Access to sensitive payment and financial information
+- Configure integrations and API settings
+
+**Typical Users:**
+- System Administrators
+- Business Process Owners
+- IT Staff responsible for application management
+
+<Callout type="warn">
+  **Important:** This role should be assigned sparingly and only to trusted personnel who require full system access. Users with this role can modify critical configurations that affect the entire organization.
+</Callout>
+
+---
+
+### Travel Agent Technical Setup
+
+The **Travel Agent Technical Setup** role is designed for users who need to configure and maintain the technical aspects of the system without having full administrative privileges.
+
+**Key Permissions:**
+- Configure setup data (brands, destinations, payment methods, etc.)
+- Manage technical integrations
+- Configure parameters and system settings
+- Read access to most data
+- Limited access to sensitive financial information
+
+**Typical Users:**
+- Technical Support Staff
+- System Configurators
+- Implementation Consultants
+
+<Callout type="info">
+  Users with this role can configure the system but have restricted access to production booking data and sensitive customer information.
+</Callout>
+
+---
+
+### Travel Agent View
+
+The **Travel Agent View** role provides read-only access to the Travel Agent Operations application.
+
+**Key Permissions:**
+- Read-only access to most application data
+- View bookings, packages, and travel information
+- Access to reports and dashboards
+- **Cannot** modify any data or configurations
+- **Cannot** access column security protected fields (see [Column Security Profiles](./column-security-profiles))
+
+**Typical Users:**
+- Reporting and Analytics Teams
+- Auditors
+- Customer Service Representatives (read-only access)
+- Management and Executives
+
+<Callout type="info">
+  This role is ideal for users who need to view information but should not be able to make changes to the system or access sensitive data fields.
+</Callout>
+
+---
+
+## Assigning Security Roles
+
+<Steps>
+<Step>
+### Navigate to User Settings
+
+Security roles are assigned through the Microsoft Power Platform Admin Center or within the Dynamics 365 environment settings.
+
+1. Access the Power Platform Admin Center
+2. Select your environment
+3. Navigate to **Settings** > **Users + permissions** > **Users**
+</Step>
+
+<Step>
+### Select a User
+
+Find and select the user to whom you want to assign a security role.
+</Step>
+
+<Step>
+### Manage Security Roles
+
+Click **Manage security roles** and select the appropriate role(s) for the user. Users can have multiple security roles, and permissions are cumulative.
+</Step>
+
+<Step>
+### Save Changes
+
+Save your changes and inform the user to log out and log back in for the new permissions to take effect.
+</Step>
+</Steps>
+
+---
+
+## Best Practices
+
+<Callout type="info">
+  **Principle of Least Privilege:** Always assign the minimum level of access required for users to perform their job functions. Start with more restrictive roles and expand access only when necessary.
+</Callout>
+
+**Recommendations:**
+- Regularly review user access and remove unnecessary permissions
+- Document which users have which roles and why
+- Use [Column Security Profiles](./column-security-profiles) in addition to security roles to protect sensitive data
+- Test role assignments in a non-production environment before applying them to production
+- Maintain an audit trail of security role changes
+
+---
+
+<Callout type="warn">
+  **Security Note:** When users have multiple security roles, they receive the combined permissions of all assigned roles. Be careful when assigning multiple roles to avoid unintentionally granting excessive access.
+</Callout>
