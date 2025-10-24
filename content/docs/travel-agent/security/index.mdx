@@ -1,0 +1,42 @@
+---
+title: Security
+description: Security configuration and access management in Travel Agent Operations.
+icon: Shield
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+
+## Overview
+
+Security in Travel Agent Operations is managed through two main components:
+
+1. **Security Roles** - Define what users can do within the application
+2. **Column Security Profiles** - Control access to sensitive data fields
+
+These security features ensure that users only have access to the data and functionality they need to perform their job responsibilities.
+
+<Callout type="info">
+  Security settings are typically configured during the initial setup and should be reviewed regularly to ensure they align with your organization's security policies.
+</Callout>
+
+## Security Components
+
+<Cards>
+  <Card
+    href="./security-roles"
+    title="Security Roles"
+    description="Learn about the different security roles and their permissions."
+  />
+  <Card
+    href="./column-security-profiles"
+    title="Column Security Profiles"
+    description="Understand how to protect sensitive data with column-level security."
+  />
+</Cards>
+
+---
+
+<Callout type="warn">
+  **Important:** Changes to security settings should be made carefully and tested in a non-production environment first. Incorrect security configurations can prevent users from accessing essential features or expose sensitive data.
+</Callout>
