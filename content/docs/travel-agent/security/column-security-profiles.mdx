@@ -86,40 +86,6 @@ The Column Security Profile system uses permission levels to control field acces
 
 ---
 
-## Best Practices
-
-<Callout type="info">
-  **Minimize Access:** Only grant column security profile access to users who absolutely need it. This is your last line of defense for sensitive data.
-</Callout>
-
-**Recommendations:**
-
-1. **Separate Profiles by Function**
-   - Create different profiles for different types of sensitive data
-   - Example: "Payment Credentials Profile", "API Keys Profile", "Banking Profile"
-
-2. **Assign to Teams When Possible**
-   - Use team-based assignments for easier management
-   - Reduces the risk of forgetting to remove access when users change roles
-
-3. **Regular Access Reviews**
-   - Quarterly review of who has access to column security profiles
-   - Remove access for users who no longer require it
-
-4. **Document Access Grants**
-   - Maintain a record of who has which profiles and why
-   - Include business justification for access
-
-5. **Test Before Production**
-   - Always test column security configurations in a development environment
-   - Verify that legitimate users can access the data they need
-
-6. **Use with Security Roles**
-   - Column security should complement, not replace, security roles
-   - Users need appropriate security roles AND column security profiles
-
----
-
 ## Troubleshooting
 
 ### User Can't See Required Fields
