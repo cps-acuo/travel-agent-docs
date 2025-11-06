@@ -3,15 +3,23 @@ title: "Multi-Language Support"
 description: "Learn about the multi-language features and localization capabilities of the Travel Agent booking form."
 ---
 
+import { ImageZoom } from 'fumadocs-ui/components/image-zoom';
 
 The Travel Agent web bookings application provides multi-language support, currently offering built-in localization for **Icelandic** and **English**. This ensures users experience the interface, messages, and data formatting (including numbers, dates, and currencies) in their preferred language and regional format. All UI elements adapt automatically based on the selected locale.
 
-Additional languages will be supported in future releases, guided by market demand.
+Additional languages will be supported in future releases, guided by user feedback and customer need.
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-center items-center">
+  <ImageZoom src={"/images/travel-agent-web-bookings/booking-form-plain.png"} width={1200} height={800} alt='Booking Form Kolumbus'/>
+  <ImageZoom src={"/images/travel-agent-web-bookings/booking-form-plain-isl.png"} width={1200} height={800} alt='Booking Form FSEB'/>
+</div>
+> _Pictured: The Travel Agent booking form in English (left) and Icelandic (right)._
 
 ## Supported Locales
 
 - **English** (`en`)
 - **Icelandic** (`is`)
+> _Note: Language support is expanded as needed._
 
 
 ## Automatic Language Detection
