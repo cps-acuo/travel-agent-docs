@@ -1,0 +1,122 @@
+---
+title: Column Security Profiles
+description: Protecting sensitive data fields with column-level security in Travel Agent Operations.
+icon: Lock
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+## Overview
+
+Column Security Profiles provide field-level data protection in Travel Agent Operations. This feature allows you to restrict access to sensitive information such as API keys, passwords, and banking credentials, even from users who have access to the underlying records.
+
+<Callout type="info">
+  Column Security Profiles work in conjunction with Security Roles. Even users with high-level security roles won't be able to view or modify column-secured fields unless they are explicitly granted access through a Column Security Profile.
+</Callout>
+
+---
+
+## How Column Security Works
+
+Column Security Profiles are typically assigned to:
+- **Individual Users** - For specific personnel who need access
+- **Teams** - For groups of users who share similar responsibilities
+
+When a field is protected by column security:
+- Users **without** the appropriate profile see "N/A" or no data in the field
+- Users **with** the appropriate profile can read and (if permitted) update the field
+- The data remains protected even in reports, views, and API calls
+
+---
+
+## Protected Fields in Travel Agent Operations
+
+The following sensitive fields are protected by Column Security Profiles. These fields contain confidential information required for integrations with payment processors, banking services, email marketing platforms, and front-end systems.
+
+<Callout type="warn">
+  **Important:** These fields typically contain locked Setup Data that should only be accessible to authorized technical and administrative personnel.
+</Callout>
+
+### Travel Brand Fields
+
+| Field Name | Display Name | Description |
+|------------|--------------|-------------|
+| `cps_apikey` | API Key | API key used to authenticate and connect to the WordPress Front End or other web-based booking systems. |
+
+---
+
+### Travel Parameters Fields
+
+| Field Name | Display Name | Description |
+|------------|--------------|-------------|
+| `cps_mc_api_key` | MC API Key | MailChimp API Key used for email marketing integration and subscriber management. |
+
+---
+
+### Travel Payment Method Fields
+
+These fields contain sensitive credentials and configuration data for various payment processors and banking services.
+
+| Field Name | Display Name | Description |
+|------------|--------------|-------------|
+| `cps_paymentaccessbankclaimant` | Bank Claimant | Claimant ID for the banking service - identifies who or what entity is requesting payment claims. |
+| `cps_paymentaccessbankprefix` | Access Bank Prefix | Prefix used to identify bank account numbers and ledger numbers in payment transactions. |
+| `cps_accessurl` | Access URL | The main endpoint URL for the payment method service. This is linked to the specific type of payment method being used. |
+| `cps_accesskey` | Access Key | Authentication key used to authenticate with the payment provider's services. |
+| `cps_paymentaccessbankendpoint` | Service End Point | The `.asmx` endpoint URL for legacy SOAP-based banking services. |
+| `cps_paymentaccesspassword` | Payment Access Password | Password credential for authenticating with banking and payment services. |
+| `cps_paymentaccessuser` | Payment Access User | Username credential for authenticating with banking and payment services. |
+| `cps_certificatename` | Certificate Name | Name of the digital certificate used to identify the company when requesting payments through banking networks. Required for secure banking integrations. |
+| `cps_serviceterminalid` | serviceTerminalId | Unique identifier of the service terminal used in Straumur self-checkout payment systems. |
+| `cps_paymentaccessurl` | Payment Access URL | The endpoint URL specifically used for Straumur payment processing services. |
+
+---
+
+## Common Read Access Patterns
+
+The Column Security Profile system uses permission levels to control field access:
+
+| Permission Level | Description |
+|------------------|-------------|
+| **Allowed** | User can read the field value |
+| **Not Allowed** | User cannot read the field value (sees "N/A" or blank) |
+| **One Record** | User can read the field only for a single record (often used for user-specific settings) |
+| **N/A** | Read permission is not applicable for this field type or configuration |
+
+---
+
+## Troubleshooting
+
+### User Can't See Required Fields
+
+**Problem:** A user reports they see "N/A" or blank values in fields they need to access.
+
+**Solution:**
+1. Verify the user has the appropriate [Security Role](./security-roles)
+2. Check if the field has field security enabled
+3. Ensure the user is assigned to the correct Column Security Profile
+4. Verify the Column Security Profile grants **Read Permission** for the field
+
+### Fields Visible to Unauthorized Users
+
+**Problem:** Sensitive data is visible to users who shouldn't have access.
+
+**Solution:**
+1. Check that field security is enabled on the field
+2. Review which users and teams are assigned to the Column Security Profile
+3. Verify that security roles alone aren't granting access through excessive privileges
+4. Review and tighten the Column Security Profile permissions
+
+---
+
+<Callout type="warn">
+  **Security Warning:** Column security protects against unauthorized viewing within the application, but data may still be accessible through database-level queries or exports by system administrators. Ensure your overall security strategy includes appropriate controls at all levels.
+</Callout>
+
+## Related Resources
+
+For more information on security configuration, see:
+- [Security Roles](./security-roles) - Learn about role-based access control
+- [Payment Methods Setup](/docs/travel-agent/setup/payment-methods) - Configure payment methods that use protected fields
+- [Brands Setup](/docs/travel-agent/setup/brands) - Configure brands that use protected API keys
