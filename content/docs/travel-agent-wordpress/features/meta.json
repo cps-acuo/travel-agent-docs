@@ -6,6 +6,7 @@
         "booking-form-element",
         "packages-table",
         "dev-api",
-        "filter-grid"
+        "filter-grid",
+        "package-list"
     ]
 }
