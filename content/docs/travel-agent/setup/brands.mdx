@@ -27,7 +27,7 @@ To create a new brand, click on the **New** button in the command bar. This will
 <Step>
 ## Defining the Brand Details
 
-In the **New Brand** window, you need to fill in the details for the brand. This page is divided into two main sections: **Web Page Connection** and **Payment Link**.
+In the **New Brand** window, you need to fill in the details for the brand. This page is divided into two main sections: **Web Page Connection** and **Payment Link** and then one other tab **Confirmation Email**.
 
 ### Web Page Connection
 This section is used to manage connections to different WordPress websites. You can also configure a **Help Text** field that will be displayed on the booking form.
@@ -58,6 +58,21 @@ This section allows you to configure the email settings for payment links:
   />
 </Cards>
 
+## Confirmation Email
+Here you can customize the email that customers receive upon booking confirmation. You can modify the subject line and the body of the email to better fit your brand's voice and style.
+
+- **Email all travelers**: Check this box if you want the confirmation email to be sent to all travelers associated with the booking.
+- **Email Template**: Customize the content of the confirmation email using the provided text editor.
+  - You can use placeholders like `{TravelerName}`, `{BookingDetails}`, etc., to personalize the email content.
+  - List of available placeholders:
+    - `{{traveller}}`: Inserts the name of the traveler.
+    - `{{travellers}}`: Inserts the details of the booking.
+    - `{{payments}}`: Inserts the payment link for the booking.
+    - `{{signature.upper}}`: Inserts the upper section of the email signature.
+    - `{{signature.lower}}`: Inserts the lower section of the email signature.
+    - `{{company.logo}}`: Inserts the company logo image.
+
+![The Confirmation Email tab in the New Brand window](/images/travel-agent/setup-brand-confirmation-email.png)
 ---
 
 <Callout type="info">
