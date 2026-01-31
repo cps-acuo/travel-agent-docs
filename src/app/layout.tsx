@@ -2,6 +2,7 @@ import './global.css';
 import { Provider } from '@/components/provider';
 import { Inter } from 'next/font/google';
 import type { ReactNode } from 'react';
+import { Suspense } from 'react';
 import Script from 'next/script';
 import Analytics from '@/components/analytics';
 
@@ -28,7 +29,9 @@ export default function Layout({ children }: { children: ReactNode }) {
       </head>
 
       <body className="flex flex-col min-h-screen">
-        <Analytics />
+        <Suspense fallback={null}>
+          <Analytics />
+        </Suspense>
         <Provider>{children}</Provider>
       </body>
     </html>
