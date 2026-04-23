@@ -1,3 +1,7 @@
 {
     "chat.promptFiles": true
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "*.mdx": "markdown"
+  }
 }
