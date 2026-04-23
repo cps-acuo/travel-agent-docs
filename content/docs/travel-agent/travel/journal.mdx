@@ -25,9 +25,8 @@ A journal entry typically includes:
 - **Type**: The type of entry (e.g., booking, waiting list).
 - **Action Outcome**: The outcome of the validation (e.g., confirmed, errors).
 - **External Ref**: An external reference number.
-- **Travel Package**: The travel package associated with the entry.
+- **Travel Package**: The travel package associated with the entry.  On change new default values will be populated for lines based on the selected package. This is especially import in relation with addons/offers as these are stock items and will be consumed.
 - **Posted Date**: The date when the entry was posted.
-- **Lines**: The number of lines in the Journal entry.
 - **Journal Status**: The status of the journal entry (e.g., Draft, Validated).
 
 </Step>
@@ -45,6 +44,27 @@ You can also post the journal entry by clicking on the **Post** button in the co
 The Journal lines section displays all lines associated with the journal entry. Each line represents a specific traveler on the booking. You can add new lines by clicking on the **New Travel Journal Line** button on the grid.
 When you press the validate button, the system will check for any errors in the journal entry and its lines. If there are no errors, the entry will be marked as validated. If there are errors, they will be displayed in the **Error** field on the Journal line, and you will need to correct them before proceeding.
 
-Journal lines can be edited by clicking on the line in the grid. This will open the journal line form, where you can update the traveler's information, such as name, age, and passport details. Check out the [Journal Lines documentation](/content/docs/travel-agent/data-management/package-data/journal-lines.mdx) for more details on how to manage journal lines.
+Journal lines can be edited by clicking on the line in the grid. This will open the journal line form, where you can update the traveler's information, such as name, age, and passport details.  
+
+The fields in the journal are self-explanatory but these need more detail description:
+- **SSN**: Is a Unique identifier for the traveler, typically the social security number.  If this is entered and the line is saved, then fields are autopopulated based on the traveler information related to the last booking that the traveler went on.
+- **Price Band**: Price band for the traveler.  If changed the offers/addons related to the line will be updated based on the new price band selected. The price for the journal line will only be update if the Price field has been removed.  Also the offers/addons prices will be changed based on the new price band and related prices for addons updated. 
+- **Price PP**: Price per person, initilzed from the Package Prices. The price can be edit.  But if there is a need to reset the price form the package the value should be removed and the lines saved.  The the price is re-initialized from the package.  
+- **Error**: Displays any errors related to the line after validation.
+- **Passport BirthDay**: Displays the traveler's passport birth date. Is calulated from SSN field if possible. 
+- **Payer**: if yes then this passenger/traveler will be payer for the booking create from the journal line.  If all lines have payer set then new booking is create for each line.
+- **Together Code**: For telling who are in the same rooms together. Can be edited as needed but is automatically generated when the journal line is created based previous bookings. 
+
+</Step>
+<Step>
+## Journal Line Offers/Addons
+Each Journal line is associated with offer or addons. Therse are actually stock items that will be consumed with the journal line and at posting there must be onhand avaliblity for the posting to be succesfull. The follwoing fields are on Addon lines:
+- **Price Band**: What is the price band of the offfer
+- **Price PP**: Displays the price for the offer - you can not change this value in the journal but once postied it can be changed. 
+- **Include**: If yes this offer line will be posted.
+- **Description**: A brief description from the Action/Offer related.
+- **On Hand**: How manny PAX are on hand of the offer.
+If all offers are not visable users can add new addon lines related to the journaline 
+
 </Step>
 </Steps>
