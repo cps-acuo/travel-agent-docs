@@ -5,6 +5,8 @@ This document provides instructions for GitHub Copilot to generate relevant and 
 ## Project Overview
 
 This project is a documentation website built with FumaDocs, a Next.js-based documentation generator. It hosts documentation for three products: Travel Agent, Travel Agent WordPress, and TA BookingForm.
+Audience: business users
+Goal: training guide
 
 ## Tech Stack
 
@@ -21,11 +23,15 @@ This project is a documentation website built with FumaDocs, a Next.js-based doc
   - `travel-agent-web-bookings/`: Documentation for the Travel Agent Web Bookings product.
 - `src/app`: Contains the Next.js application code.
 - `src/mdx-components.tsx`: Defines custom MDX components.
+- `doc/database.md`: Defines database structure for the applications.
+- `doc/optionsets.md`: Defines option sets or enums for the applications.
+- `public/images/travel-agent`: Contains images for the Travel Agent documentation.
+- `public/images/travel-agent-wordpress`: Contains images for the Travel Agent WordPress documentation.
+- `public/images/travel-agent-web-bookings`: Contains images for the Travel Agent Web Bookings documentation.
 
 ## Conventional Commits
 
 When writing commit messages, please adhere to the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/). This helps to maintain a clear and descriptive commit history.
-
 
 ## External Documentation
 

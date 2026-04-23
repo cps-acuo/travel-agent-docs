@@ -1,6 +1,6 @@
 ---
 title: Travel
-description: Travel section is for daily operations for managing packages  and bookings in the Travel Agent Operation.
+description: Travel section is for daily operations, managing packages and bookings in the Travel Agent Operation.
 ---
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Card, Cards } from 'fumadocs-ui/components/card';
@@ -13,9 +13,9 @@ The Travel section encompasses all daily operations for managing packages, booki
 <Step>
 ## Key Components
 
-The Travel section includes several key components:
+Travel section includes several key components:
 
-- **Travel Packages**: Create and manage packages that can be booked
+- **Travel Packages**: Create and manage packages that can be booked including, Prices, Payments Options, Actions and availability for each offer witin the action.
 - **Travel Bookings**: Track individual bookings, a booking consists of 
   - **Traveler**: The individuals that are included in the booking along with the prices and activities 
   - **Traveler activity**: An activity that traveler has purchased with bookings along with prices and dates
@@ -30,16 +30,15 @@ The Travel section includes several key components:
 
 To get started with the Travel section:
 
-1. Setup - before starting to create Travel Packages, you need to understand some basic setup. This includes configuring 
-- *Parameter*
-- *Action*
-- *Payment Mehtod*
-- *Destination*
-- *Brand*
-- *Item*
-the necessary environment variables and ensuring that the backend is running.
-2. [Travel Packages](./travel-packages) to understand how to create and manage travel offerings
-3. [Travel Bookings](./travel-bookings) for your customers
+1. **Setup** - before starting to create Travel Packages, you need to understand some basic setup. This includes configuring the following:
+   - *Parameter*
+   - *Action*
+   - *Payment Method*
+   - *Destination*
+   - *Brand*
+   - *Item*
+2. Review [Travel Packages](./travel-packages) to understand how to create and manage travel offerings
+3. Review [Travel Bookings](./travel-bookings) for your customers
 4. Familiarize yourself with the [Travelers](./travelers) management system
 5. Understand how the [Journal](./journal) is used to add travelers to a package and create bookings.
 
@@ -51,22 +50,22 @@ Each section provides detailed instructions for efficient travel management oper
 
 <Cards>
   <Card
-    href="./travel-packages"
+    href="travel/travel-packages"
     title="Travel Packages"
-    description="Create and manage packages that are beeing offered for sale"
+    description="Create and manage packages that are being offered for sale"
   />
   <Card
-    href="./travel-bookings"
+    href="travel/travel-bookings"
     title="Travel Bookings"
     description="Manage all aspects of package bookings"
   />
   <Card
-    href="./travelers"
+    href="travel/travelers"
     title="Travelers"
     description="Manage information on individuals that are part of your booking"
   />
   <Card
-    href="./journal"
+    href="travel/journal"
     title="Journal"
     description="Register package sales and individuals that are included in the booking"
   />
