@@ -12,7 +12,7 @@ import { Card, Cards } from 'fumadocs-ui/components/card';
 <Step>
 ## Navigating to the Travel Packages Page
 
-![The Travel Packages page in Travel Agent](/images/travel-agent/travel-packages-active-view-1.png)
+![The Travel Packages page in Travel Agent](/images/travel-agent/travel-packages-active-view-2.png)
 </Step>
 <Step>
 
@@ -27,7 +27,17 @@ A package is a sellable instance of an Item, with the **Item** field controlling
 - **Name**: A descriptive name for the travel package.
 - **Item**: The related item, for setting up defaults for the package.
 
-### Main Sections of the Package Form
+## Purposed based form for Travel Package :
+
+- **Sales, Booking, and Web**: This form includes all the details of the package, such as the name, item, dates, web, and booking setup. It also covers the setup of prices, payment options, and package prices. Additionally, it contains tabs for managing travelers and their activities, bookings, payments, and more.
+
+- **Package Actions and Availability**: This form is used to configure options offered for each action and the availability of offers. You can also view on-hand information for each offer within the actions.
+
+- **Package Procurement**: This form is designed to manage the purchase of action offers and view the current status of costs, sales, and contributions for each package.
+
+![The sub form selection as per task](/images/travel-agent/package-sub-form-selection.png)
+
+### Package - Sales, Booking, and Web
 - **General**: Contains essential information such as name, item, dates, number of nights and days, maximum rooms, and maximum PAX (passengers).
 - **Website Booking Options**: Configure web booking details, including package image, minimum PAX per booking, waitlist options, and disclaimers.
 - **Website Appearance Settings**: Control how the package appears on your sales website, including display name, excerpt, and automatic updates for availability.
@@ -44,7 +54,7 @@ A package is a sellable instance of an Item, with the **Item** field controlling
     - **Information**: Details about the action, such as description, hotel name, flight number, etc.
     - **Action**: Lookup from Action in setup, allowing grouping by vendor (e.g., airline or hotel chain).
     - **Auto Register**: If enabled, all existing travelers are automatically registered to new actions when posting a travel journal.
-    - **Display on Web**: There are options of dispalying Action for select on web bookings and the also if is per travler or for booking i.e. all tervelers.
+    - **Display on Web**: There are options of displaying Action for select on web bookings and the also if is per traveler or for booking i.e. all travelers.
 - **Package Prices**: Define pricing for the package, including single (SGL), double (DBL), triple (TRP) occupancy, and more.
 - **Addons**: Define actions that are optional, these are called addons. If a package action is assigned, it is automatically linked to travelers who select the addon. Read more about Package Addons [here](../data-management/package-setup/package-addons).
 
