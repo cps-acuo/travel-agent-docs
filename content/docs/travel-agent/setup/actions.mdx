@@ -9,6 +9,38 @@ import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
 import { Card, Cards } from 'fumadocs-ui/components/card';
 
+## What is an Action?
+
+An **Action** is a building block used to define the individual activities or services that make up a travel or event package. Each action represents a specific type of service — such as a flight, hotel stay, tour, transport, meal, or any other activity — and can optionally be linked to a vendor who provides that service.
+
+Actions work on three levels:
+
+1. **Action (Template)** — A reusable definition of a service type. For example, "British Airways Flight" or "Hilton Hotel Stay". Each action has a name, a type, and an optional vendor.
+2. **Package Action** — When an action is added to a specific package, it becomes a package action. This is where you set the dates, web display options, and any related actions for that package.
+3. **Traveler Action** — When a traveler is registered to a package action (either manually or automatically), a traveler action record is created. This tracks the individual traveler's participation, quantity, price, and price band.
+
+### Action Types
+
+Every action must be assigned one of the following types:
+
+| Type | Use for |
+|------|---------|
+| Flight | Air travel segments |
+| Hotel | Accommodation bookings |
+| Tours | Guided tours, excursions, workshops, or sessions |
+| Transport | Ground transportation (buses, transfers, car rentals) |
+| Food & Beverage | Meals, catering, dining events |
+| Other | Lectures, entertainment, equipment, or anything not covered above |
+
+### How Actions Connect to Packages
+
+When you build a travel or event package, you add one or more actions to define what the package includes. Each package action can have its own date range, offers with pricing and availability, and can be displayed on the web booking form. Travelers are then registered to specific package actions, either automatically when they book the package or manually by an operator.
+
+<Callout type="info">
+  **Tip:** Think of actions as the "line items" of a package. A trip to London might include actions for the outbound flight, the hotel, a city tour, a dinner event, and the return flight — each tracked separately with its own vendor, dates, and pricing.
+</Callout>
+
+---
 
 <Steps>
 <Step>
