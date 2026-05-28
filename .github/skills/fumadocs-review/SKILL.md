@@ -123,6 +123,15 @@ Introductory paragraph explaining the purpose of this section.
 - [Navigation & Links](https://fumadocs.dev/docs/ui/navigation/links)
 - [Sidebar Configuration](https://fumadocs.dev/docs/ui/navigation/sidebar)
 
+## Reference Files
+
+When reviewing or creating documentation, consult these project reference files for accurate field names, table structures, and option set values:
+
+- **Database schema**: `Doc/database.md` — Dataverse table definitions, column names, data types, and lookup relationships
+- **Option sets**: `Doc/optionsets.md` — Dataverse option set (enum) values and labels used across the application
+
+Read these files to validate that documentation accurately references database fields, table names, and option set values.
+
 ## Project-Specific Guidelines
 
 This project serves **business users** as a **training guide**:
