@@ -1,21 +1,21 @@
 {
-    "title": "Travel",
-    "pages": [
-        "--- Package ---",
-        "travel-packages",
-        "travelers",
-        "travel-bookings",
-        "journal",
-        "--- Payments ---",
-        "claims-collections",
-        "payment-claims",
-        "payment-checkouts",
-        "payments-imported",
-        "--- Reports ---",
-        "hotel-report",
-        "flight-report",
-        "tour-guide-report",
-        "passport-report"
-    ],
-    "icon": "Map"
+  "title": "Travel",
+  "pages": [
+    "--- Package ---",
+    "travel-packages",
+    "travelers",
+    "travel-bookings",
+    "journal",
+    "--- Payments ---",
+    "claims-collections",
+    "payment-claims",
+    "payment-checkouts",
+    "payments-imported",
+    "--- Reports ---",
+    "hotel-report",
+    "flight-report",
+    "tour-guide-report",
+    "passport-report"
+  ],
+  "icon": "Map"
 }
