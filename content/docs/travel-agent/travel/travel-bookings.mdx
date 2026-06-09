@@ -1,10 +1,12 @@
 ---
 title: Bookings
-description: The Bookings page provides an overview of all bookings made for travel packages.
+description: The Bookings page provides an overview of all bookings made for packages.
 icon: CalendarPlus
 ---
 
 import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+The Bookings page is where you manage all travel bookings in the system. Each booking links a traveler (or group of travelers) to a package, and tracks payments, claims, and traveler details.
 
 <Steps>
 <Step>
@@ -12,28 +14,23 @@ import { Step, Steps } from 'fumadocs-ui/components/steps';
 
 Click on the **Bookings** link in the sidebar to access the Bookings page. This page displays a list of all bookings made in the system, allowing you to manage existing bookings.
 
-
-To view or edit a booking, click on it from the bookings list. This will open the booking details page, where you can update information across various tabs.
-
 </Step>
 <Step>
-
 
 ## Editing an existing Booking
 
 To view or edit a booking, click on it from the bookings list. This will open the booking form, where you can edit and update the details.
 
-
 This page displays which travelers/attendees are associated with the booking and the payments that have been made or are due for the booking.
 
 There are a number of fields that are always filled in when a booking is created, such as:
 - **Booking**: The unique identifier for the booking.
-- **Package**: The travel package associated with the booking.
+- **Package**: The package associated with the booking.
 - **Reference**: A reference number for the booking.
 - **Traveler payer**: The traveler who is responsible for the payment of the booking.
 
 There are also some useful fields that just give you information about the booking, such as:
-- **Email Status**: Indicates whether the booking confirmation email has been sent.
+- **Email Status**: The current status of the booking confirmation email — one of **Created**, **Ready to send**, or **Sent**.
 - **EmailSent**: The date and time when the booking confirmation email was sent.
 - **No of travelers**: The number of travelers in the booking.
 - **Sales Amount**: The total price of the booking.
@@ -42,19 +39,20 @@ There are also some useful fields that just give you information about the booki
 - **Claims**: The total amount claimed for the booking.
 - **Booking Notes**: Any notes or comments related to the booking.
 
-### Payments
-The Payments section displays all payments made towards the booking. Which includes payment details, [more details on payment claims](./payment-claims).
-But usually these would include information about the payment method, amount, date of payment, etc.
-You can also add new payments directly from the booking page by clicking on the **New Travel Booking Claim** button above the payments grid.
+### Claims
+The Claims section displays all payment claims associated with the booking, including the payment method, amount, due date, and whether the claim has been paid. See [Payment Claims](./payment-claims) for more details.
+
+You can add a new claim directly from the booking page by clicking the **New Travel Booking Claim** button above the claims grid.
 
 ### Travelers/Attendees
-In the Travelers/Attendees section, you can see all travelers or attendees associated with the booking. This includes their names, contact information, their price band and price per person. 
+In the Travelers/Attendees section, you can see all travelers or attendees associated with the booking. This includes their names, contact information, price band, and price per person. Passport details (number, expiry date, nationality, and date of birth) are also stored per traveler and are important for travel documentation.
+
 You can add new travelers to the booking by clicking on the **New Travel Booking Traveler** button.
 </Step>
 <Step>
 ## Creating a new Booking
 
-To create a new booking, you typically start from the **[Journal](./journal)**.
+Bookings are created when a traveler is registered to a package. To create a new booking, you start from the **[Journal](./journal)**, where you can register travelers and generate the corresponding booking record.
 
 </Step>
 </Steps>
