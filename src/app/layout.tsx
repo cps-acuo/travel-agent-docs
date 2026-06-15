@@ -1,18 +1,13 @@
 import './global.css';
 import { Provider } from '@/components/provider';
-import { Inter } from 'next/font/google';
 import type { ReactNode } from 'react';
 import { Suspense } from 'react';
 import Script from 'next/script';
 import Analytics from '@/components/analytics';
 
-const inter = Inter({
-  subsets: ['latin'],
-});
-
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={inter.className} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-DVNXWVQH7L"
