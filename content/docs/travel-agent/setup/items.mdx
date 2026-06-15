@@ -1,6 +1,6 @@
 ---
 title: Items
-description: Items are templates for Travel Pakackages to make them reusable.
+description: Items control the visibility, display text, and booking experience for Packages.
 icon: Tickets
 ---
 import { Callout } from 'fumadocs-ui/components/callout';
@@ -53,19 +53,19 @@ This section configures the booking form behavior for the item on the website. T
 - **Max Travelers**: Sets the maximum number of travelers allowed in a single booking.
 - **Show Header**: Controls whether header text is displayed on the booking form.
 - **Show Prices**: Determines if pricing information is visible on website.
-- **Show Status**: Displays availability status ("Few seats left", " Only *\{x\}* seats left ", "Sold Out") if enabled.
+- **Show Status**: Displays availability status ("Few seats left", "Only {x} seats left", "Sold Out") if enabled.
 - **Reg. Passport**: Require registering passport information during booking (Passport number, Sex, Issue Date, Expiration Date, Birthday) if enabled.
 - **Reg. Address**: Register address during booking if enabled.
 - **Reg. SSN**: Requires Social Security Number to be registered during booking.
 - **Comment Registration**: Allows customers to add comments during the booking process.
 - **Email Registration**: Requires customers to provide an email address during booking.
 - **Phone Registration**: Requires customers to provide a phone number during booking.
-- **Lookup SSN**: Enables web serviced lookup for SSN for automatic population of name and address.
-- **Picture**: Stores URL for picture to displays on booking form - if empty then there will be no picture shown.
+- **Lookup SSN**: Enables web service lookup for SSN for automatic population of name and address.
+- **Picture**: Stores a URL for the picture displayed on the booking form. If empty, no picture is shown.
 
 ### Website Appearance Settings
 
- This section configures how the travel package appears on sales web pages (like WordPress) and controls display of availability information to visitors.
+This section configures how the travel package appears on sales web pages (like WordPress) and controls display of availability information to visitors.
 
 - **Destination**: Sets the destination associated with this item.
 - **Term Destination**: Configures destination taxonomy terms for sales web page, if left empty then the value is defaulted to the one defined in Destination.
@@ -73,10 +73,10 @@ This section configures the booking form behavior for the item on the website. T
 - **Design Post Id**: Links to specific WordPress post that will be used as a template for the item.
 - **Exclude from Search**: If enabled, the item will not appear in search results on the sales website.
 - **X Seats Left**: Threshold number for displaying "seats left" notification on the booking form.
-- **Few Seats Left**: The threshold that triggers "few seats left" notification. So if you set this to 5, it will show "Few Seats Left" when there are 5 or fewer seats available.
+- **Few Seats Left**: The threshold that triggers the "Few Seats Left" notification. When availability drops to this number or below, the message appears.
 - **Show Price Band Avail.**: Displays availability information based on price bands if enabled.
 - **Show Sold Out Price Band**: Displays the sold out status for each price band if enabled.
-- **Description (excerpt)**: Brief description that appears on gallery listings and search results for travel packages post (on sales website). Can be changed for individual package customization.
+- **Description (excerpt)**: Brief description that appears in gallery listings and search results on the sales website. Can be changed for individual package customization.
 
 </Step>
 </Steps>
@@ -99,6 +99,3 @@ This section configures the booking form behavior for the item on the website. T
 
 ---
 
-<Callout type="info">
-  **Need help?** If you encounter any issues or have questions, please refer to our [FAQ](./faq) or [contact support](mailto:support@example.com).
-</Callout>
