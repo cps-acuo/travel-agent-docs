@@ -6,101 +6,113 @@ icon: TicketsPlane
 
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 
-Packages are the core entity in Travel Agent. This page explains how to navigate, create, and manage travel packages, including pricing, payment plans, actions, and web booking settings.
+Packages are the core entity in Travel Agent. This page explains how to create and manage packages, including pricing, payment plans, package actions, and website booking settings.
 
 <Steps>
 <Step>
-## Navigating to the Packages Page
+## Navigate to the Packages Page
 
-Click on the **Packages** link in the sidebar to access the Packages page. This page displays a list of all travel packages in the system. You can filter and search the list to find specific packages, and use the command bar to create, clone, or manage packages.
+Open **Packages** from the sidebar. The list shows all packages in the system. Use search and filters to find specific records, and use the command bar to create, clone, or manage packages.
 
 ![The Packages page in Travel Agent](/images/travel-agent/travel-packages-active-view-2.png)
 </Step>
+
 <Step>
-## Creating a New Package
-To create a new package, click the **New** button in the command bar. To create a package based on an existing one, select the desired package(s) and click the **Clone** button in the command bar.
+## Create a New Package
+
+Click **New** in the command bar to create a package.
+
+To create a package from an existing setup, select one or more packages and click **Clone**.
+
 ![The Clone button in the command bar](/images/travel-agent/travel-packages-clone-feature.png)
 
-### Packages definition
-Packages are collections of information required to create bookable events, view bookings, and manage itineraries.
-A package is a sellable instance of an Item, with the **Item** field controlling certain characteristics. The **Item** and **Name** fields are mandatory when creating a new package.
-- **Name**: A descriptive name for the package.
-- **Item**: The related item, for setting up defaults for the package.
+### Package definition
+
+A package is the sellable instance of an item. It brings together dates, pricing, booking rules, and operational setup for one travel offering.
+
+The following fields are required when creating a package:
+- **Name**: A descriptive package name.
+- **Item**: The related item that provides package defaults.
 </Step>
+
 <Step>
-## Editing a Travel Package and Viewing Related Information using Purpose-Based Forms
+## Edit a Package
+
+To edit a package, open the package by clicking its **Name** in the list.
+
+When the form selector appears, choose the form based on what you need to manage:
+
 ![Travel Agent interface showing three purpose-based form options for editing packages: Sales Booking and Web, Package Actions and Availability, and Package Procurement. Each option is presented as a selectable card within the package management interface.](/images/travel-agent/package-sub-form-selection.png)
-- **Sales, Booking, and Web**: This form includes all the details of the package, such as the name, item, dates, web, and booking setup. It also covers the setup of prices, payment options, and package prices. Additionally, it contains tabs for managing travelers and their activities, bookings, payments, and more.
 
-- **Package Actions and Availability**: This form is used to configure options offered for each action and the availability of offers. You can also view on-hand information for each offer within the actions.
+- **Sales, Booking, and Web**: Use for core package setup, website setup, payment plans, and package prices.
+- **Package Actions and Availability**: Use for operational actions and offer availability.
+- **Package Procurement**: Use for purchase-side tracking, including cost and contribution status.
 
-- **Package Procurement**: This form is designed to manage the purchase of action offers and view the current status of costs, sales, and contributions for each package.
+### Sales, Booking, and Web
 
-
-<Steps>
-<Step>
-
-
-### Package - Sales, Booking, and Web
-To edit a travel package, click the **Name** of the desired package in the list view. This opens the travel package details page, where you can modify various fields and settings.
+This is the main form for day-to-day package setup.
 
 ![The Travel Package edit form](/images/travel-agent/travel-package-edit-form.png)
 
+The related tabs provide quick access to package activity:
+- **Travelers**: All travelers assigned to the package.
+- **Bookings**: Bookings sold for the package.
+- **Payments/Claims**: Payment and claim records connected to the package.
+- **Traveler Actions**: Actions registered for travelers in the package.
+- **Passport**: Traveler names and passport-related details.
+- **Wait-list**: Current wait-list entries for the package.
 
-The travel package edit form includes several tabs for viewing related information. These tabs provide access to various data and entities associated with the package, as well as customized relations in the far-right tab:
-- **Travelers**: Displays all travelers/attendees assigned to the package.
-- **Bookings**: Lists all bookings sold for the package.
-- **Payments/Claims**: Shows all payments/claims associated with the package.
-- **Traveler Actions**: Lists all actions registered for travelers/attendees in the package.
-- **Passport**: Similar to the Travelers tab, but also displays names in a passport-friendly format and additional passport information.
-- **Wait-list**: Displays all travelers on the wait-list for the package.
-
-The Package tab has the following groups and fields: 
-
-- **General**: Contains essential information such as name, item, dates, number of nights and days, maximum rooms, and maximum PAX (passengers).
-- **Website Booking Options**: Configure web booking details, including package image, minimum PAX per booking, waitlist options, and disclaimers.
-- **Website Appearance Settings**: Control how the package appears on your sales website, including display name, excerpt, and automatic updates for availability.
-- **Package Payment Plan**: Set up a payment plan, which may include one or more lines (e.g., deposit and final payment).
-    - **Due Dates**: Specify due dates for each payment line.
+Main groups in the **Package** tab:
+- **General**: Name, item, travel dates, nights, days, max rooms, and max PAX.
+- **Website Booking Options**: Image, minimum PAX per booking, wait-list behavior, and disclaimers.
+- **Website Appearance Settings**: Display name, excerpt, and automatic availability updates.
+- **Package Payment Plan**: One or more payment lines (for example deposit and final payment).
+    - **Due Date**: Date each line becomes due.
     - **Type**:
-        - **Amount Per Traveler**: A fixed amount due at booking.
-        - **Remainder**: The remaining balance, such as the final payment.
-        - **Percent**: A percentage of the total amount due on the specified date.
-    - **Amount**: Enter the amount or percentage for each payment line.
-    - **Payment Method**: Specify how each payment should be collected (modifiable later).
+        - **Amount Per Traveler**: Fixed amount due at booking.
+        - **Remainder**: Remaining balance due (typically final payment).
+        - **Percent**: Percentage of total due on the specified date.
+    - **Amount**: Value for the selected type.
+    - **Payment Method**: Preferred collection method (can be changed later).
+- **Package Prices**: Occupancy-based pricing such as SGL, DBL, and TRP.
+- **Addons**: Optional actions that can be selected during booking. If an addon action is assigned, it links automatically to travelers who select it. Read more: [Package Addons](../data-management/package-setup/package-addons).
 
-- **Package Prices**: Define pricing for the package, including single (SGL), double (DBL), triple (TRP) occupancy, and more.
-- **Addons**: Define actions that are optional, these are called addons. If a package action is assigned, it is automatically linked to travelers who select the addon. Read more about Package Addons [here](../data-management/package-setup/package-addons).
-</Step>
-<Step>
 ### Package Actions and Availability
-This form is used to configure options offered for each action and the availability of offers. You can also view on-hand information for each offer within the actions.
-- **Package Actions**: Set up actions related to the package, such as flights, hotels, tours, and food & beverage.
-    - **Action Name**: Automatically generated if not specified.
-    - **Information**: Details about the action, such as description, hotel name, flight number, etc.
-    - **Action**: Lookup from Action in setup, allowing grouping by vendor (e.g., airline or hotel chain). Action types include: **Flight**, **Hotel**, **Tours**, **Transport**, **Food & Beverage**, and **Other**.
-    - **Auto Register**: If enabled, all existing travelers are automatically registered to new actions when posting a travel journal.
-    - **Display on Web**: Controls visibility of the action on web bookings — **No**, **Per Traveler** (each traveler selects individually), or **Per Booking** (applies to all travelers in the booking).
-</Step>
-<Step>
+
+Use this form to configure package actions and control availability of offers.
+
+- **Package Actions**: Actions tied to the package, such as flights, hotels, tours, and food and beverage.
+    - **Action Name**: Auto-generated if left empty.
+    - **Information**: Action details such as hotel name, flight number, or description.
+    - **Action**: Lookup from setup actions for vendor grouping. Types include **Flight**, **Hotel**, **Tours**, **Transport**, **Food & Beverage**, and **Other**.
+    - **Auto Register**: Registers existing travelers to new actions when posting a travel journal.
+    - **Display on Web**: Visibility option for web bookings: **No**, **Per Traveler**, or **Per Booking**.
+
 ### Package Procurement
-This form is designed to manage the purchase of action offers and view the current status of costs, sales, and contributions for each package.
+
+Use this form to manage purchasing of action offers and monitor current cost, sales, and contribution status.
+
+### Key fields to monitor
+
+- **Status**: Current lifecycle stage: **Preparation**, **In Sales**, **Closed for Sales**, or **Travel**.
+- **From Date** and **To Date**: Travel period for the package.
+- **Max PAX** and **Unbooked PAX**: Capacity and remaining availability.
+- **Max Rooms**: Maximum available room capacity.
+- **Nights** and **Days**: Trip duration.
+- **Confirmation Email**: Sends booking confirmation automatically to the traveler payer when a booking is created.
+- **Comment**: Internal notes for staff.
+
+### Common mistakes to avoid
+
+- Saving a package without confirming the correct **Item**.
+- Forgetting to add a **Remainder** line, which can result in part of the booking value not being collected.
+- Enabling **Display on Web** for actions that should stay internal.
+- Forgetting to review **Unbooked PAX** before moving status to **In Sales**.
+
+### Related pages
+
+- [Travel Bookings](./travel-bookings)
+- [Payment Claims](./payment-claims)
+- [Journal](./journal)
 </Step>
-</Steps>
-
-### Key Fields
-- **Status**: Indicates the current status of the travel package: **Preparation**, **In Sales**, **Closed for Sales**, or **Travel**.
-- **From Date**: The start date of the travel package.
-- **To Date**: The end date of the travel package.
-- **Nights**: Total number of nights included.
-- **Days**: Total number of days included.
-- **Max Rooms**: Maximum number of rooms available.
-- **Max PAX**: Maximum number of passengers allowed.
-- **Unbooked PAX**: Number of available PAX.
-- **Confirmation Email**: If enabled, a booking confirmation email is automatically sent to the traveler payer when a booking is created.
-- **Comment**: Internal notes or comments related to the travel package.
-</Step>
-
-
-
 </Steps>
