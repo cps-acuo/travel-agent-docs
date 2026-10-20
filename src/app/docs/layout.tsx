@@ -6,10 +6,10 @@ import { SidebarFooter } from '@/components/sidebar-footer';
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <DocsLayout 
-      tree={source.pageTree} 
+    <DocsLayout
+      tree={source.pageTree}
       {...baseOptions}
-      disableThemeSwitch={true}
+      themeSwitch={{ enabled: false }}
       sidebar={{
         footer: <SidebarFooter />,
       }}
