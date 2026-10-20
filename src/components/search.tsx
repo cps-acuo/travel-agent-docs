@@ -13,9 +13,9 @@ import {
   type SharedProps,
 } from 'fumadocs-ui/components/dialog/search';
 import { useI18n } from 'fumadocs-ui/contexts/i18n';
-import { create } from '@orama/orama';
+import { create } from 'zbsearch';
 
-function initOrama() {
+function initDB() {
   return create({
     schema: {
       title: 'string',
@@ -30,7 +30,7 @@ export default function CustomSearchDialog(props: SharedProps) {
   const { locale } = useI18n(); // for i18n support
   const { search, setSearch, query } = useDocsSearch({
     type: 'static',
-    initOrama,
+    initDB,
     locale,
   });
 

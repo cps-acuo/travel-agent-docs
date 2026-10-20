@@ -1,41 +1,51 @@
 ---
 title: Execution Tasks
-description: Various processes and tasks the system offers that run in the background of the Travel Agent Operation.
+description: Reference the background task types and fields used by Travel Agent Operations.
 icon: Terminal
 ---
 
-To start execution of a task a new task is created in the Acuo Travel Agent Operations Execution Task table. This task is then processed by the system, once **Task status** is gets the value **Exectue**.  A task may involve running scripts, performing data updates, or executing other necessary operations.
-the table has the following fields:
- 
-| Field                    | Description                                                      |
-|--------------------------|------------------------------------------------------------------|
-| Id                       | unique identifier for the task.                                  |
-| Status                    | Active, Inactive          |
-| Stage                | ***Status=Active:*** Pending, Exectue, Faild / ***Status=Inactive:*** Complete  |
-| Task Type       | See table below                       |
-| Priority        | Task Priority higher number higher Priority              |
-| Parent Task               | Parent task that generate this task.                         |
+Execution tasks are records in the `cps_task` table that Travel Agent Operations uses to track background work. Each task has a type and may be linked to a parent task. Some task types are automated or intended for internal use, so check with your administrator before creating or changing a task.
 
+## Task fields
 
-The Acuo Travel Agent Operations ***Execution Task tables***
-Here is a list of various processes and tasks for running in background of the Travel Agent Operation. These tasks are essential for maintaining the functionality and performance of the system.
+| Field | Description |
+| --- | --- |
+| Task record ID (`cps_taskid`) | Unique identifier for the task record. |
+| Task ID (`cps_id`) | Text identifier associated with the task. |
+| Parameters (`cps_parameters`) | Parameters associated with the task. |
+| Task results (`cps_taskresults`) | Results associated with the task. |
+| Task type (`cps_executiontasktype`) | Identifies the kind of task. The task type name is stored in `cps_executiontasktypename`. |
+| Priority (`cps_priority`) | Priority value assigned to the task. |
+| Parent task (`cps_task_parent`) | Links the task to a parent task, when applicable. The parent task name is stored in `cps_task_parentname`. |
 
+The application may also display task status and stage. The database reference does not specify their available labels, so confirm those values in your environment.
 
+## Available task types
 
- 
-| Task Name                | Description                                                      | Usages                        |
-|--------------------------|------------------------------------------------------------------|-----------------------------------------|
-|MailChimp update  | Updates MailChimp marketing list with information latest customer and booking information. | automated marketing list in MailChimp |
-| Create Journal for Travelers| this is creating journal for selected travalers form power app grid     | Internal useage to support functionalities|
-| Clone Package  | Operation that clones selected packages to save time in creating new package  | Internal useage to support functionalities|
-|Update addon price for all travelers| Updates the addon prices for all travelers in the system| Used to synchronization during update       |
-|Update Bookings Rollups| Update booking Rollups from bookings from travelers and claims| Used to synchronization during update   |
-|Update Package Rollups| Update booking Rollups for packages| Used to synchronization during update   |
-|Split Name First and Last| Split name into first name and last name where they are empty| Used during update or data migration  |   
-|Prepare Claims| Create Payment journal lines from journal header parameters | Internal useage to support functionalities |
-|Post Collection Journal| Post Payment journal and update relvanted infomation based on payment mode of the journal | Internal useage |
-|Payments From Straumur| Fetch and update payments from one of our servcie providers | Internal usage |
-|Journal Posting| Post Travel Journal and update relvante infomation (Traveler,Booking, Claims, Addons, Actions) | Internal usage |
-|Journal Validate| Validate Travel Journal and update error messages | Internal usage |
-|Update Claims information| Update claims information based on data from payer | Internal usage |
+The following task type choices are defined for `cps_executiontasktype`. Their presence in this list does not mean that users should create or run them manually.
 
+| Value | Task type |
+| ---: | --- |
+| 10 | MailChimp update |
+| 11 | Create Journal for Travelers |
+| 12 | Clone Package |
+| 15 | Update addon price for all travelers |
+| 16 | Update Bookings Rollups |
+| 17 | Update Package Rollups |
+| 18 | Update FirstName and LastName |
+| 19 | Update Claims information |
+| 20 | Update Package offers |
+| 30 | Prepare Claims |
+| 31 | Post Collection Journal |
+| 32 | Payments From Straumur |
+| 33 | Create Bank API Claims |
+| 34 | Payments From Bank API |
+| 35 | Auto Create Collection and post |
+| 37 | Create Booking Receipt |
+| 38 | Send Receipt Email |
+| 40 | Currency rate import Frankfurter |
+| 50 | Journal Posting |
+| 51 | Journal Validate |
+| 60 | Create Travel Email for booking |
+| 70 | Key-Vault validation |
+| 80 | App Upgrade Data Migration March 2026 |

@@ -1,6 +1,6 @@
 'use client';
 
-import { RootProvider } from 'fumadocs-ui/provider';
+import { RootProvider } from 'fumadocs-ui/provider/next';
 import CustomSearchDialog from '@/components/search';
 import type { ReactNode } from 'react';
 import { Suspense } from 'react';
