@@ -12,7 +12,7 @@ Execution tasks are records in the `cps_task` table that Travel Agent Operations
 | --- | --- |
 | Task record ID (`cps_taskid`) | Unique identifier for the task record. |
 | Task ID (`cps_id`) | Text identifier associated with the task. |
-| Parameters (`cps_parameters`) | Parameters associated with the task. |
+| Parameters (`cps_parameters`) | Task-specific parameter data. The schema reference does not define its format or required values. |
 | Task results (`cps_taskresults`) | Results associated with the task. |
 | Task type (`cps_executiontasktype`) | Identifies the kind of task. The task type name is stored in `cps_executiontasktypename`. |
 | Priority (`cps_priority`) | Priority value assigned to the task. |
@@ -24,28 +24,28 @@ The application may also display task status and stage. The database reference d
 
 The following task type choices are defined for `cps_executiontasktype`. Their presence in this list does not mean that users should create or run them manually.
 
-| Value | Task type |
-| ---: | --- |
-| 10 | MailChimp update |
-| 11 | Create Journal for Travelers |
-| 12 | Clone Package |
-| 15 | Update addon price for all travelers |
-| 16 | Update Bookings Rollups |
-| 17 | Update Package Rollups |
-| 18 | Update FirstName and LastName |
-| 19 | Update Claims information |
-| 20 | Update Package offers |
-| 30 | Prepare Claims |
-| 31 | Post Collection Journal |
-| 32 | Payments From Straumur |
-| 33 | Create Bank API Claims |
-| 34 | Payments From Bank API |
-| 35 | Auto Create Collection and post |
-| 37 | Create Booking Receipt |
-| 38 | Send Receipt Email |
-| 40 | Currency rate import Frankfurter |
-| 50 | Journal Posting |
-| 51 | Journal Validate |
-| 60 | Create Travel Email for booking |
-| 70 | Key-Vault validation |
-| 80 | App Upgrade Data Migration March 2026 |
+| Value | Task type | Description or usage |
+| ---: | --- | --- |
+| 10 | MailChimp update | Updates the MailChimp marketing list with customer and booking information. Used for automated marketing list updates. |
+| 11 | Create Journal for Travelers | Creates journals for selected travelers from the Power Apps grid. Internal use. |
+| 12 | Clone Package | Clones selected packages. Internal use. |
+| 15 | Update addon price for all travelers | Updates addon prices for travelers. Used to synchronize updates. |
+| 16 | Update Bookings Rollups | Updates booking rollups from traveler bookings and claims. Used to synchronize updates. |
+| 17 | Update Package Rollups | Updates package rollups. Used to synchronize updates. |
+| 18 | Update FirstName and LastName | Splits names into first and last names when those values are empty. Used during updates or data migration. |
+| 19 | Update Claims information | Updates claims information based on data from the payer. Internal use. |
+| 20 | Update Package offers | N/A |
+| 30 | Prepare Claims | Creates payment journal lines from journal header parameters. Internal use. |
+| 31 | Post Collection Journal | Posts a payment journal and updates related information based on the journal's payment mode. Internal use. |
+| 32 | Payments From Straumur | Fetches and updates payments from a service provider. Internal use. |
+| 33 | Create Bank API Claims | N/A |
+| 34 | Payments From Bank API | N/A |
+| 35 | Auto Create Collection and post | N/A |
+| 37 | Create Booking Receipt | N/A |
+| 38 | Send Receipt Email | N/A |
+| 40 | Currency rate import Frankfurter | N/A |
+| 50 | Journal Posting | Posts a travel journal and updates related traveler, booking, claim, addon, and action information. Internal use. |
+| 51 | Journal Validate | Validates a travel journal and updates its error messages. Internal use. |
+| 60 | Create Travel Email for booking | N/A |
+| 70 | Key-Vault validation | N/A |
+| 80 | App Upgrade Data Migration March 2026 | N/A |
