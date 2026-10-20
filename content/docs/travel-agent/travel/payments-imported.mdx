@@ -1,24 +1,22 @@
 ---
 title: Payments Imported
-description: Details about imported payments in the Travel Agent product.
+description: Reference for payment-related tasks and payment-plan fields.
 icon: FolderInput
 ---
 
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 
 
-# Att. PLACEHOLDER CONTENT, Todo: fix content.
-
 <Steps>
 <Step>
-## Understanding Imported Payments
+## Imported Payments functionality
 
-Imported payments are financial transactions that are brought into the Travel Agent system from external sources, such as:
+Imported payments are payments transactions that are brought into the Travel Agent rom external sources, such as:
 
-- Bank statement imports
-- Payment gateway transactions
+- Bank 
+- Payment gateway 
 - Third-party booking platform payments
-- Bulk payment imports from accounting systems
+
 
 This feature streamlines the reconciliation process and ensures all payments are properly recorded in the system.
 </Step>
@@ -27,9 +25,9 @@ This feature streamlines the reconciliation process and ensures all payments are
 
 To import payment data into the system:
 
-TODO endurskrifa 
-
 The system will process the file and import all valid payment records.
+
+After import, the system attempts to allocate each payment to a claim using the claim ID, SSN, and amount.
 </Step>
 <Step>
 ## Managing Imported Payments
@@ -37,12 +35,9 @@ The system will process the file and import all valid payment records.
 After importing payments, you need to:
 
 1. Review the imported transactions for accuracy
-2. Match payments to existing bookings or travelers
-3. Resolve any unmatched or duplicate payments
-4. Generate reconciliation reports
-5. Process any payment exceptions or errors
-6. Finalize the import by confirming all matched payments
+2. Resolve any unmatched or duplicate payments
 
+The process of import is automatic but requires manual setup.
 The system maintains an audit trail of all imported payments and their subsequent handling.
 </Step>
 </Steps>
