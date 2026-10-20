@@ -22,13 +22,13 @@ Open **Packages** from the sidebar. The list shows all packages in the system. U
 
 Click **New** in the command bar to create a package.
 
-To create a package from an existing setup, select one or more packages and click **Clone**.
+To create a package based on an existing package, select one or more packages and click **Clone**.
 
 ![The Clone button in the command bar](/images/travel-agent/travel-packages-clone-feature.png)
 
 ### Package definition
 
-A package is the sellable instance of an item. It brings together dates, pricing, booking rules, and operational setup for one travel offering.
+A package is an item offered for sale for specific dates, with its own pricing and booking rules.
 
 The following fields are required when creating a package:
 - **Name**: A descriptive package name.
@@ -40,7 +40,7 @@ The following fields are required when creating a package:
 
 To edit a package, open the package by clicking its **Name** in the list.
 
-When the form selector appears, choose the form based on what you need to manage:
+When prompted, choose the form that matches what you need to manage:
 
 ![Travel Agent interface showing three purpose-based form options for editing packages: Sales Booking and Web, Package Actions and Availability, and Package Procurement. Each option is presented as a selectable card within the package management interface.](/images/travel-agent/package-sub-form-selection.png)
 
@@ -82,21 +82,21 @@ Main groups in the **Package** tab:
 Use this form to configure package actions and control availability of offers.
 
 - **Package Actions**: Actions tied to the package, such as flights, hotels, tours, and food and beverage.
-    - **Action Name**: Auto-generated if left empty.
+    - **Action Name**: The name is generated automatically if you leave this field empty.
     - **Information**: Action details such as hotel name, flight number, or description.
-    - **Action**: Lookup from setup actions for vendor grouping. Types include **Flight**, **Hotel**, **Tours**, **Transport**, **Food & Beverage**, and **Other**.
-    - **Auto Register**: Registers existing travelers to new actions when posting a travel journal.
+    - **Action**: Select an action from Setup to group the offer by vendor. Types include **Flight**, **Hotel**, **Tours**, **Transport**, **Food & Beverage**, and **Other**.
+    - **Auto Register**: When a travel journal is posted, automatically registers existing travelers for new actions.
     - **Display on Web**: Visibility option for web bookings: **No**, **Per Traveler**, or **Per Booking**.
 
 ### Package Procurement
 
-Use this form to manage purchasing of action offers and monitor current cost, sales, and contribution status.
+Use this form to manage purchases of action offers and review costs, sales, and contribution status.
 
 ### Key fields to monitor
 
-- **Status**: Current lifecycle stage: **Preparation**, **In Sales**, **Closed for Sales**, or **Travel**.
+- **Status**: Package stage: **Preparation**, **In Sales**, **Closed for Sales**, or **Travel**.
 - **From Date** and **To Date**: Travel period for the package.
-- **Max PAX** and **Unbooked PAX**: Capacity and remaining availability.
+- **Max PAX** and **Unbooked PAX**: The package capacity and the number of places still available.
 - **Max Rooms**: Maximum available room capacity.
 - **Nights** and **Days**: Trip duration.
 - **Confirmation Email**: Sends booking confirmation automatically to the traveler payer when a booking is created.

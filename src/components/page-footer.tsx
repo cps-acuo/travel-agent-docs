@@ -10,7 +10,7 @@ export function PageFooter() {
       </div>
       <div className="flex flex-col sm:flex-row gap-2 sm:items-center">
         <span className="text-sm text-muted-foreground">
-          Found an issue with this page?
+          Found an issue with this page, that needs to be reported?
         </span>
         <ReportIssueButtonWithIcons variant="compact" />
       </div>
